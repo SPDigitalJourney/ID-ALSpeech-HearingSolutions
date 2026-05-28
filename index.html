@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDÉAL Speech and Hearing Solutions | Mangalore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --burgundy: #7A1C3E;
+      --burgundy-dark: #5c1430;
+      --burgundy-light: #9e2251;
+      --cream: #FAF8F5;
+      --white: #ffffff;
+      --gray-light: #f0ece8;
+      --gray-mid: #c9b8b8;
+      --gray-text: #5a4a4a;
+      --black: #1a0d10;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 4vw;
+      height: 72px;
+      background: rgba(250,248,245,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(122,28,62,0.12);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(122,28,62,0.10); }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo img {
+      height: 48px; width: auto;
+    }
+    .nav-links {
+      display: flex; gap: 36px; list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gray-text); font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--burgundy); }
+
+    .nav-cta {
+      background: var(--burgundy); color: #fff;
+      padding: 9px 22px; border-radius: 2px;
+      font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; font-weight: 500;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--burgundy-dark); transform: translateY(-1px); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--burgundy); transition: 0.3s; }
+
+    /* ── HERO ── */
+    #hero {
+      margin-top: 72px;
+      min-height: calc(100vh - 72px);
+      display: grid; grid-template-columns: 1fr 1fr;
+      position: relative; overflow: hidden;
+    }
+
+    .hero-content {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 4vw 80px 6vw;
+      position: relative; z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(122,28,62,0.08); border: 1px solid rgba(122,28,62,0.2);
+      padding: 6px 14px; border-radius: 100px;
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--burgundy); font-weight: 500; margin-bottom: 28px;
+      width: fit-content;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--burgundy); display: block;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 300; line-height: 1.05;
+      color: var(--black); margin-bottom: 12px;
+    }
+    .hero-title em {
+      font-style: italic; color: var(--burgundy);
+    }
+    .hero-title strong {
+      font-weight: 600; display: block;
+    }
+
+    .hero-tagline {
+      font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--burgundy); margin-bottom: 24px; font-weight: 400;
+    }
+
+    .hero-desc {
+      font-size: 1rem; line-height: 1.8; color: var(--gray-text);
+      max-width: 480px; margin-bottom: 40px; font-weight: 300;
+    }
+
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--burgundy); color: #fff;
+      padding: 14px 32px; border-radius: 2px;
+      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; font-weight: 500;
+      transition: all 0.25s; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--burgundy-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(122,28,62,0.3); }
+
+    .btn-outline {
+      border: 1.5px solid var(--burgundy); color: var(--burgundy);
+      padding: 14px 32px; border-radius: 2px;
+      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; font-weight: 500;
+      transition: all 0.25s; display: inline-block;
+    }
+    .btn-outline:hover { background: var(--burgundy); color: #fff; }
+
+    .hero-visual {
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-visual img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: center;
+    }
+    .hero-visual::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--cream) 0%, transparent 30%);
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--burgundy);
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+    }
+    .trust-item {
+      padding: 28px 20px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; font-weight: 600; color: #fff; display: block;
+    }
+    .trust-label {
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.65); margin-top: 4px;
+    }
+
+    /* ── SECTION COMMON ── */
+    section { padding: 96px 6vw; }
+    section.alt { background: var(--gray-light); }
+
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--burgundy); font-weight: 500; margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300; line-height: 1.15; margin-bottom: 20px;
+    }
+    .section-title em { font-style: italic; color: var(--burgundy); }
+    .section-desc {
+      font-size: 1rem; line-height: 1.8; color: var(--gray-text);
+      max-width: 600px; font-weight: 300; margin-bottom: 40px;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .about-logo-wrap {
+      display: flex; justify-content: center; align-items: center;
+      padding: 60px;
+      background: var(--white);
+      border: 1px solid rgba(122,28,62,0.1);
+      position: relative;
+    }
+    .about-logo-wrap::before {
+      content: ''; position: absolute; top: 12px; left: 12px; right: -12px; bottom: -12px;
+      border: 1px solid rgba(122,28,62,0.15); z-index: -1;
+    }
+    .about-logo-wrap img { max-width: 220px; }
+
+    .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+    .about-feat {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 16px; background: var(--white); border-left: 3px solid var(--burgundy);
+    }
+    .about-feat-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .about-feat-text { font-size: 0.85rem; line-height: 1.5; color: var(--gray-text); }
+    .about-feat-text strong { display: block; color: var(--black); font-weight: 500; font-size: 0.9rem; margin-bottom: 2px; }
+
+    /* ── SERVICES ── */
+    #services { text-align: center; }
+    #services .section-title, #services .section-desc { margin-left: auto; margin-right: auto; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
+    .service-card {
+      background: var(--white); padding: 40px 28px;
+      text-align: left; position: relative; overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-4px); }
+    .service-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: var(--burgundy); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon { font-size: 2rem; margin-bottom: 16px; }
+    .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; }
+    .service-desc { font-size: 0.87rem; line-height: 1.7; color: var(--gray-text); }
+
+    /* ── BRANDS ── */
+    #brands { text-align: center; background: var(--black); }
+    #brands .section-label { color: var(--gray-mid); }
+    #brands .section-title { color: var(--white); }
+    #brands .section-title em { color: #c4748e; }
+    .brands-grid {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;
+      margin-top: 48px;
+    }
+    .brand-pill {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      padding: 16px 32px; border-radius: 2px;
+      font-size: 1.05rem; font-weight: 500; color: rgba(255,255,255,0.8);
+      letter-spacing: 0.06em;
+      transition: all 0.3s; cursor: default;
+    }
+    .brand-pill:hover {
+      background: var(--burgundy); border-color: var(--burgundy); color: #fff;
+      transform: translateY(-2px);
+    }
+    .brand-pill.highlight {
+      background: var(--burgundy); border-color: var(--burgundy); color: #fff;
+    }
+    .brands-note {
+      margin-top: 28px; font-size: 0.82rem; color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── GALLERY ── */
+    #gallery { }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 240px 240px;
+      gap: 8px; margin-top: 48px;
+    }
+    .gallery-item {
+      overflow: hidden; position: relative; background: var(--gray-light);
+    }
+    .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s; display: block;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    /* ── BLOG ── */
+    #blog { background: var(--gray-light); }
+    .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+    .blog-card {
+      background: var(--white); padding: 36px;
+      border-top: 3px solid var(--burgundy);
+      transition: box-shadow 0.3s;
+    }
+    .blog-card:hover { box-shadow: 0 12px 40px rgba(122,28,62,0.10); }
+    .blog-card-tag {
+      font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--burgundy); font-weight: 600; margin-bottom: 12px;
+    }
+    .blog-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 600; line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .blog-card-desc { font-size: 0.9rem; line-height: 1.75; color: var(--gray-text); }
+    .blog-card img { width: 100%; height: 180px; object-fit: cover; margin-top: 20px; }
+
+    /* ── CONTACT ── */
+    #contact { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .contact-info { }
+    .contact-item { display: flex; gap: 16px; margin-bottom: 28px; }
+    .contact-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--burgundy); border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: #fff;
+    }
+    .contact-detail { }
+    .contact-detail strong { display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--burgundy); margin-bottom: 4px; }
+    .contact-detail span, .contact-detail a { font-size: 0.9rem; color: var(--gray-text); text-decoration: none; line-height: 1.6; display: block; }
+    .contact-detail a:hover { color: var(--burgundy); }
+
+    .location-card {
+      background: var(--white); border: 1px solid rgba(122,28,62,0.1);
+      padding: 24px; margin-bottom: 20px;
+      border-left: 4px solid var(--burgundy);
+    }
+    .location-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 600; margin-bottom: 8px;
+    }
+    .location-card p { font-size: 0.85rem; color: var(--gray-text); line-height: 1.6; }
+
+    .map-wrap { border: 1px solid rgba(122,28,62,0.12); overflow: hidden; margin-top: 12px; }
+    .map-wrap iframe { width: 100%; height: 220px; display: block; }
+
+    /* ── LEAD FORM ── */
+    #lead-form-section {
+      background: var(--burgundy); padding: 80px 6vw; text-align: center;
+    }
+    #lead-form-section .section-title { color: #fff; }
+    #lead-form-section .section-desc { color: rgba(255,255,255,0.7); margin: 0 auto 40px; }
+    .lead-form {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      max-width: 700px; margin: 0 auto;
+      justify-content: center;
+    }
+    .lead-form input {
+      flex: 1 1 180px;
+      padding: 14px 18px; border: none; border-radius: 2px;
+      font-family: 'Jost', sans-serif; font-size: 0.9rem;
+      background: rgba(255,255,255,0.15); color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+      outline: none; transition: background 0.2s;
+    }
+    .lead-form input::placeholder { color: rgba(255,255,255,0.55); }
+    .lead-form input:focus { background: rgba(255,255,255,0.22); }
+    .lead-form textarea {
+      flex: 1 1 100%; padding: 14px 18px; border: none; border-radius: 2px;
+      font-family: 'Jost', sans-serif; font-size: 0.9rem;
+      background: rgba(255,255,255,0.15); color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+      outline: none; resize: vertical; min-height: 90px;
+    }
+    .lead-form textarea::placeholder { color: rgba(255,255,255,0.55); }
+    .lead-form button {
+      background: #fff; color: var(--burgundy);
+      border: none; padding: 14px 36px; border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 600; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lead-form button:hover { background: var(--cream); transform: translateY(-2px); }
+
+    /* ── SOCIAL ── */
+    .social-bar {
+      background: var(--black); padding: 28px 6vw;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .social-links { display: flex; gap: 12px; }
+    .social-link {
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 1rem;
+      transition: all 0.2s; color: rgba(255,255,255,0.6);
+    }
+    .social-link:hover { background: var(--burgundy); border-color: var(--burgundy); color: #fff; }
+    .book-btn {
+      background: var(--burgundy); color: #fff;
+      padding: 12px 28px; border-radius: 2px;
+      font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; font-weight: 500;
+      transition: all 0.2s;
+    }
+    .book-btn:hover { background: var(--burgundy-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 40px 6vw;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; }
+    .footer-links a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+      background: #25D366; color: #fff;
+      width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 1.6rem;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      transition: all 0.3s;
+      animation: pulse-wa 2.5s infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 30px rgba(37,211,102,0.65); }
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 960px) {
+      #hero { grid-template-columns: 1fr; }
+      .hero-visual { height: 300px; }
+      .hero-visual::after { background: linear-gradient(to bottom, transparent 40%, var(--cream) 100%); }
+      #about { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .trust-bar { grid-template-columns: repeat(2, 1fr); }
+      #contact { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-item:first-child { grid-column: span 2; height: 260px; }
+      .gallery-item { height: 200px; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .trust-bar { grid-template-columns: repeat(2, 1fr); }
+      .about-features { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:first-child { grid-column: span 1; }
+    }
+
+    /* ── ANIMATIONS ── */
+    [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    [data-reveal].revealed { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="logo.png" alt="IDÉAL Speech and Hearing Solutions" onerror="this.style.display='none'">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--burgundy);letter-spacing:0.05em;">IDÉAL</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#brands">Brands</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://idealspeechandhearing.setmore.com/idealspeechandhearing" target="_blank" class="nav-cta">Book Appointment</a>
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" style="display:none;position:fixed;top:72px;left:0;right:0;background:var(--cream);z-index:99;padding:24px 6vw;border-bottom:1px solid rgba(122,28,62,0.1);box-shadow:0 8px 30px rgba(0,0,0,0.1);">
+  <ul style="list-style:none;display:flex;flex-direction:column;gap:20px;">
+    <li><a href="#about" onclick="toggleMenu()" style="text-decoration:none;color:var(--black);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.85rem;">About</a></li>
+    <li><a href="#services" onclick="toggleMenu()" style="text-decoration:none;color:var(--black);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.85rem;">Services</a></li>
+    <li><a href="#brands" onclick="toggleMenu()" style="text-decoration:none;color:var(--black);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.85rem;">Brands</a></li>
+    <li><a href="#gallery" onclick="toggleMenu()" style="text-decoration:none;color:var(--black);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.85rem;">Gallery</a></li>
+    <li><a href="#contact" onclick="toggleMenu()" style="text-decoration:none;color:var(--black);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;font-size:0.85rem;">Contact</a></li>
+    <li><a href="https://idealspeechandhearing.setmore.com/idealspeechandhearing" target="_blank" class="btn-primary" style="display:inline-block;width:fit-content;">Book Appointment</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Mangalore's Premier Hearing Care Centre</div>
+    <h1 class="hero-title">
+      <em>IDÉAL</em>
+      <strong>Speech &amp;<br>Hearing Solutions</strong>
+    </h1>
+    <p class="hero-tagline">Aiming Perfection &mdash; Because Every Word and Sound Matters</p>
+    <p class="hero-desc">A leading healthcare provider of comprehensive Audiology and Speech therapy services in Mangalore. State-of-the-art diagnostics, top hearing aid brands, and unparalleled patient care.</p>
+    <div class="hero-actions">
+      <a href="https://idealspeechandhearing.setmore.com/idealspeechandhearing" target="_blank" class="btn-primary">Book a Consultation</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="hero.PNG" alt="IDÉAL Speech and Hearing Solutions" />
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <span class="trust-number">5</span>
+    <span class="trust-label">Authorised Brands</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-number">City's<br style="line-height:1"> 1st</span>
+    <span class="trust-label">Complete Hearing Care Diagnostic Centre</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-number">2</span>
+    <span class="trust-label">Clinic Locations</span>
+  </div>
+  <div class="trust-item">
+    <span class="trust-number">♿</span>
+    <span class="trust-label">Wheelchair Accessible &amp; Home Care</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-logo-wrap" data-reveal>
+    <img src="hero.PNG" alt="IDÉAL Logo" style="max-width:100%;" />
+  </div>
+  <div data-reveal>
+    <p class="section-label">About Us</p>
+    <h2 class="section-title">Where Science Meets <em>Compassionate Care</em></h2>
+    <p class="section-desc">Located at Arya Samaj Road, Kadri, Mangalore, IDÉAL Speech and Hearing Solutions delivers comprehensive Audiology and Speech therapy. Our expert team uses advanced diagnostics to ensure accurate evaluation and personalised care for every patient.</p>
+    <div class="about-features">
+      <div class="about-feat">
+        <span class="about-feat-icon">🦻</span>
+        <div class="about-feat-text"><strong>Advanced Diagnostics</strong>OAE, Newborn Screening, ABR, VEMP &amp; Cochlear Implant Mapping</div>
+      </div>
+      <div class="about-feat">
+        <span class="about-feat-icon">🏠</span>
+        <div class="about-feat-text"><strong>Home Care Services</strong>Anywhere in the district, without restrictions</div>
+      </div>
+      <div class="about-feat">
+        <span class="about-feat-icon">♿</span>
+        <div class="about-feat-text"><strong>Fully Accessible</strong>Wheelchair access &amp; dedicated parking</div>
+      </div>
+      <div class="about-feat">
+        <span class="about-feat-icon">🏆</span>
+        <div class="about-feat-text"><strong>Leading Widex Dealer</strong>Leading authorised Widex clinic in Mangalore</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="alt">
+  <p class="section-label">What We Offer</p>
+  <h2 class="section-title">Comprehensive <em>Hearing &amp; Speech</em> Care</h2>
+  <p class="section-desc" style="margin:0 auto 0;">Expert services backed by highly experienced Audiologists and Speech therapists committed to your wellbeing.</p>
+  <div class="services-grid">
+    <div class="service-card" data-reveal>
+      <div class="service-icon">👂</div>
+      <h3 class="service-title">Hearing Assessments</h3>
+      <p class="service-desc">Comprehensive audiological evaluations to accurately assess your hearing health and identify any hearing loss or related conditions.</p>
+    </div>
+    <div class="service-card" data-reveal>
+      <div class="service-icon">🔬</div>
+      <h3 class="service-title">Advanced Auditory Tests</h3>
+      <p class="service-desc">OAE, Newborn Hearing Screening, ABR, VEMP tests and Cochlear Implantation mapping (Cochlear brand).</p>
+    </div>
+    <div class="service-card" data-reveal>
+      <div class="service-icon">🔊</div>
+      <h3 class="service-title">Hearing Aid Fitting</h3>
+      <p class="service-desc">Tailored solutions from 5 top brands — Phonak, Unitron, Widex, Signia &amp; ReSound — personalised to your unique hearing needs.</p>
+    </div>
+    <div class="service-card" data-reveal>
+      <div class="service-icon">🗣️</div>
+      <h3 class="service-title">Speech Therapy</h3>
+      <p class="service-desc">Expert speech therapy for adults with speech and neurological conditions, focused on restoring and enhancing communication.</p>
+    </div>
+    <div class="service-card" data-reveal>
+      <div class="service-icon">🌀</div>
+      <h3 class="service-title">Vestibular Testing</h3>
+      <p class="service-desc">Advanced vestibular diagnostics to evaluate balance disorders and related auditory-vestibular conditions.</p>
+    </div>
+    <div class="service-card" data-reveal>
+      <div class="service-icon">🏠</div>
+      <h3 class="service-title">Home Care Services</h3>
+      <p class="service-desc">We bring professional audiological care to your doorstep, anywhere in the district — no restrictions on location.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section id="brands">
+  <p class="section-label">Our Partners</p>
+  <h2 class="section-title">Authorised Dealers for <em>World's Leading</em> Brands</h2>
+  <div class="brands-grid">
+    <div class="brand-pill highlight">Widex</div>
+    <div class="brand-pill">Phonak</div>
+    <div class="brand-pill">Signia</div>
+    <div class="brand-pill">ReSound</div>
+    <div class="brand-pill">Unitron</div>
+  </div>
+  <p class="brands-note">✦ Genuine products &nbsp;·&nbsp; Expert fittings &nbsp;·&nbsp; Manufacturer-backed care &nbsp;·&nbsp; Leading Widex authorised clinic in Mangalore ✦</p>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <p class="section-label">Gallery</p>
+  <h2 class="section-title">Our <em>Clinic &amp; Products</em></h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBEGOOcaNSdDuJcQtzK_7w-6xn_p5owHcUIrTvkqus7FRGIP0yjyK5Js9uj2oNngi3wa9F4NGrJweMEQfFtqs9dDI-m_uif8GKFs7jCELVQWayJwM2SgowCLAqh6mpy3Px0TVyxOuKBlT89cz_31RrUnOOSly11TsDuNGVEyGFnSNLcYXH62yW9oTmjQg/s600/2025-04-06.jpg" alt="Clinic" loading="lazy" />
+    </div>
+    <div class="gallery-item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfIkbCZ7R3qvTjwWBThtvATAy1q8iB4wgkrZgCLGesR617GawzeO6T08_bD8J3g2Ekg0JQ-3n7ET7pxWJFHeFekLVZagrVK_SyUFl9urORGDjUaVGFpKcRLw-wXsGi8HNg3EyY2rrD-KZHpr8IkdzN1ASVCAsUKPnz58jIkPwARhxFe9TzlLfE1TatDKY/s1200/product1.jpg" alt="Product 1" loading="lazy" />
+    </div>
+    <div class="gallery-item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLk6ZWmLJOVIMym5r-C8E20Zb0kc_y2tiXgfUAE3OfHsn90elkTQubZbmWReWjSq08VOI5nJyAKIxk_nONd3h_jUBkG35PfQ0QYi_IOQw8BUby8rGD1sFTx-8nK3yT_5aPU1B0bPzL6BHy9XARN4JyrlJV9rAhBPp2UzeGXh3_0HNfq705LKdNXdAhuDU/s600/Products2.jpg" alt="Product 2" loading="lazy" />
+    </div>
+    <div class="gallery-item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfQL1gKXiIFGTmYwq3L3xqJ896PIRpVP2fv3mdet3gw_8Ew8LZxLtV0vM7pUou2hqVmF7Ebm97ZEJKYNtlWNpoyDuIYqs-gkkGPYEJ5tYqIAzZ7W5lski4j7hHj5RbmWTvtssBDN_soOdyFkEhsSk76O3pxtushCt20h92_JyV1taTEGQK9Dzns9C7184/s447/product3.jpg" alt="Product 3" loading="lazy" />
+    </div>
+    <div class="gallery-item">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyVH_stMq8FpJ51A_7AXszFDMY7VfdgMqs2SygsQa6sdiWxzMK-l2ttKXy-yJyeyCtXxcWuN-Q8-tKN813FLUF8Bacd5nqHURB6M27bi59frQvqzWFSTNaI766cGkuKa8ZMytk7zcHpBQECwFltiM9VUyXCI8oP0qWzzMUM35fxEG-U0TCBIZ4M9OitQM/s1000/products4.jpg" alt="Product 4" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog" class="alt">
+  <p class="section-label">Latest News</p>
+  <h2 class="section-title">From Our <em>Clinic</em></h2>
+  <div class="blog-grid">
+    <div class="blog-card" data-reveal>
+      <div class="blog-card-tag">🎧 Partner Announcement</div>
+      <h3 class="blog-card-title">Authorised Partners: Widex, Signia &amp; ReSound</h3>
+      <p class="blog-card-desc">IDÉAL Speech and Hearing Solutions is proud to be an authorised partner for Widex, Signia, and ReSound. Our clients receive genuine products, expert fittings, and manufacturer-backed care you can trust.</p>
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6DXt14tw-6PfG8dJevvaXuKXZZlYR_ImiUWoFOyS0aCYtNvYON2pyylXMUbfEtUACsaDN6BiUFrVRQxr-gHlkzFcOQEuLllx1oLxVNjqTXiSuWha7dFu3-buoRlfVzFKl4ptV39DWbnuQ5i2ikEjTlYO_jfTmAslvzY4vT5WK1Phe77_sn7fx5E1bFf4/s278/Partner.PNG" alt="Partner Announcement" loading="lazy" />
+    </div>
+    <div class="blog-card" data-reveal>
+      <div class="blog-card-tag">🎧 Partner Announcement</div>
+      <h3 class="blog-card-title">Authorised Partners: Sonova — Unitron &amp; Phonak</h3>
+      <p class="blog-card-desc">We are equally proud to be an authorised partner for Sonova brands — Unitron and Phonak. This partnership ensures our patients have access to some of the most innovative hearing technology in the world.</p>
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2LoRPlxvlPEh1d2z2xvzLn3RkElA8tBHTVSYgyLXhSYWOwv2yDrrlPdE09Y1rDNwACIPDbG41PpM0T1VRlVBEyh7kQ1ewtjqO88QaP7ccbK-JVKULa5kMJWbbVBXmQcgbe3krxW417VESIojlzJzzhjuOZ0sEk-fG-MxpWnZAj1J5DvP-wBUPKS3mGDY/s251/Sonova.PNG" alt="Sonova Partner" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- LEAD CAPTURE FORM -->
+<section id="lead-form-section">
+  <p class="section-label" style="color:rgba(255,255,255,0.5);">Get In Touch</p>
+  <h2 class="section-title">Book a <em style="color:#c4748e;">Free Consultation</em></h2>
+  <p class="section-desc">Fill in your details and we'll reach out to schedule your appointment. Your message will be sent directly via WhatsApp.</p>
+  <form class="lead-form" onsubmit="sendToWhatsApp(event)">
+    <input type="text" id="f-name" placeholder="Your Name *" required />
+    <input type="tel" id="f-phone" placeholder="Phone Number *" required />
+    <input type="email" id="f-email" placeholder="Email Address" />
+    <textarea id="f-msg" placeholder="Tell us about your concern..."></textarea>
+    <button type="submit">📲 Send via WhatsApp</button>
+  </form>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div data-reveal>
+    <p class="section-label">Find Us</p>
+    <h2 class="section-title">Visit Our <em>Clinics</em></h2>
+
+    <div class="location-card">
+      <h4>IDÉAL Speech and Hearing Solutions — Main Clinic</h4>
+      <p>No. 204, Indus Commercial Complex, Arya Samaj Rd,<br>above Ather Electric Scooter Showroom, Kadri, Mangaluru – 575003</p>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.230321806984!2d74.84908140992997!3d12.878422987376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35bcdf5773f53%3A0x65623cceb72a0840!2sID%C3%89AL%20Speech%20and%20Hearing%20Solutions!5e0!3m2!1sen!2sin!4v1779995017465!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Main Clinic Map"></iframe>
+    </div>
+
+    <div class="location-card" style="margin-top:28px;">
+      <h4>BestSound IDÉAL Speech and Hearing Solutions</h4>
+      <p>Bimbis Commercials, 206, Kulur Ferry Rd, above KFC,<br>Urwa, Mangaluru – 575006</p>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.13961238644!2d74.83304957433357!3d12.898742916472967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35bdd41c4b52b%3A0xbe2ca683d5651d08!2sBestSound%20ID%C3%89AL%20Speech%20and%20Hearing%20Solutions!5e0!3m2!1sen!2sin!4v1779995114216!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="BestSound Clinic Map"></iframe>
+    </div>
+  </div>
+
+  <div data-reveal>
+    <p class="section-label">Contact Details</p>
+    <h2 class="section-title">Get In <em>Touch</em></h2>
+
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div class="contact-detail">
+        <strong>Phone</strong>
+        <a href="tel:+919482110420">094821 10420</a>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-detail">
+        <strong>Email</strong>
+        <a href="mailto:idealshs.mangalore@gmail.com">idealshs.mangalore@gmail.com</a>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div class="contact-detail">
+        <strong>Main Clinic</strong>
+        <span>No. 204, Indus Commercial Complex, Arya Samaj Rd, Kadri, Mangaluru – 575003</span>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🕐</div>
+      <div class="contact-detail">
+        <strong>Appointments</strong>
+        <a href="https://idealspeechandhearing.setmore.com/idealspeechandhearing" target="_blank">Book Online via Setmore →</a>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;">
+      <p class="section-label" style="margin-bottom:16px;">Connect With Us</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://www.linkedin.com/company/ideal-speech-and-hearing-solutions/" target="_blank" class="btn-outline" style="padding:10px 20px;font-size:0.8rem;">LinkedIn</a>
+        <a href="https://www.facebook.com/people/Id%C3%A9al-Speech-and-Hearing-Solutions/61573655292414/" target="_blank" class="btn-outline" style="padding:10px 20px;font-size:0.8rem;">Facebook</a>
+        <a href="https://www.instagram.com/ideal_shs" target="_blank" class="btn-outline" style="padding:10px 20px;font-size:0.8rem;">Instagram</a>
+        <a href="https://wa.me/919482110420" target="_blank" class="btn-primary" style="padding:10px 20px;font-size:0.8rem;">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL BAR -->
+<div class="social-bar">
+  <div>
+    <p style="color:rgba(255,255,255,0.4);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;">Follow Us</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/company/ideal-speech-and-hearing-solutions/" target="_blank" class="social-link" aria-label="LinkedIn">in</a>
+      <a href="https://www.facebook.com/people/Id%C3%A9al-Speech-and-Hearing-Solutions/61573655292414/" target="_blank" class="social-link" aria-label="Facebook">f</a>
+      <a href="https://www.instagram.com/ideal_shs" target="_blank" class="social-link" aria-label="Instagram">ig</a>
+      <a href="https://wa.me/919482110420" target="_blank" class="social-link" aria-label="WhatsApp">wa</a>
+    </div>
+  </div>
+  <a href="https://idealspeechandhearing.setmore.com/idealspeechandhearing" target="_blank" class="book-btn">Book Appointment →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 IDÉAL Speech and Hearing Solutions, Mangalore. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms &amp; Conditions</a>
+    <a href="#">Limitation of Liability</a>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919482110420" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+  💬
+</a>
+
+<script>
+  // Sticky nav
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    const m = document.getElementById('mobile-menu');
+    m.style.display = m.style.display === 'none' ? 'block' : 'none';
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+  // Lead form → WhatsApp
+  function sendToWhatsApp(e) {
+    e.preventDefault();
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const msg = document.getElementById('f-msg').value.trim();
+    const text = encodeURIComponent(
+      `Hello IDÉAL Speech & Hearing Solutions!\n\n` +
+      `*Name:* ${name}\n*Phone:* ${phone}\n` +
+      (email ? `*Email:* ${email}\n` : '') +
+      (msg ? `*Message:* ${msg}` : `I'd like to book a consultation.`)
+    );
+    window.open(`https://wa.me/919482110420?text=${text}`, '_blank');
+  }
+</script>
+</body>
+</html>
