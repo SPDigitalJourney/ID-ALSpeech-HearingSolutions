@@ -424,9 +424,10 @@
       .diag-grid { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 960px) {
-      #hero { grid-template-columns: 1fr; }
-      .hero-visual { height: 300px; }
-      .hero-visual::after { background: linear-gradient(to bottom, transparent 40%, var(--cream) 100%); }
+      .hero-content { padding: 60px 6vw 100px; }
+      .hero-title { font-size: clamp(2.4rem, 8vw, 3.5rem); }
+      .hero-stats { width: 100%; }
+      .hero-stat { flex: 1 1 calc(50% - 1px); padding: 16px 20px; }
       #about { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .trust-bar { grid-template-columns: repeat(2,1fr); }
@@ -439,6 +440,9 @@
       .hamburger { display: flex; }
     }
     @media (max-width: 600px) {
+      .hero-stat { flex: 1 1 calc(50% - 1px); padding: 14px 12px; }
+      .hero-stat-num { font-size: 1.5rem; }
+      .hero-stat-label { font-size: 0.6rem; }
       .services-grid { grid-template-columns: 1fr; }
       .about-features { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
@@ -446,6 +450,8 @@
       .diag-grid { grid-template-columns: 1fr; }
       .brands-grid { grid-template-columns: 1fr; }
       .trust-bar { grid-template-columns: repeat(2,1fr); }
+      .hero-actions { flex-direction: column; }
+      .hero-btn-primary, .hero-btn-outline { text-align: center; }
     }
   </style>
 </head>
@@ -486,6 +492,14 @@
 
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-bg">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcTiJHWXkxaEVzNwKOo75eU5_KNqIlvOPdB1u-r1tj1l7WW46Sg8-axbSILGFINcpCpmEIWXEvXKFSq1r6ziAJH2szModwjL5hpxTsFl1s6Fx7rQgWbRJnF6GEqCA_YtY5YAFfUeIipJZ3XyZ4ugLw-d9XCm_TySZ1cnkhHTAnN6bHN9WwOxS_XBMnoUk/s796/hero.PNG"
+      alt="IDÉAL Speech and Hearing Solutions Mangalore"
+      onerror="this.onerror=null;this.src='hero.PNG'" />
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-bg-overlay2"></div>
+  </div>
+
   <div class="hero-content">
     <div class="hero-badge">Mangalore's Premier Hearing Care Centre</div>
     <h1 class="hero-title">
@@ -493,16 +507,34 @@
       <strong>Speech &amp;<br>Hearing Solutions</strong>
     </h1>
     <p class="hero-tagline">Aiming Perfection — Because Every Word and Sound Matters</p>
-    <p class="hero-desc">Where Science Meets Compassionate Care. Located at Kadri, Mangalore, we deliver comprehensive Audiology and Speech solutions with state-of-the-art diagnostics, top hearing aid brands, and unparalleled personalised care.</p>
+    <p class="hero-desc">Where Science Meets Compassionate Care. Mangalore's leading audiology clinic — advanced diagnostics, top hearing aid brands, and the city's only Cochlear™ Implant Mapping centre.</p>
     <div class="hero-actions">
-      <a href="https://idealspeechandhearing.setmore.com/idealspeechandhearing" target="_blank" class="btn-primary">Book a Free Consultation</a>
-      <a href="#services" class="btn-outline">Our Services</a>
+      <a href="https://idealspeechandhearing.setmore.com/idealspeechandhearing" target="_blank" class="hero-btn-primary">Book a Free Consultation</a>
+      <a href="#services" class="hero-btn-outline">Explore Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">5</span>
+        <span class="hero-stat-label">Authorised Brands</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">Only</span>
+        <span class="hero-stat-label">Cochlear™ Mapping Centre</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">City's 1st</span>
+        <span class="hero-stat-label">Complete Diagnostic Centre</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">🏠</span>
+        <span class="hero-stat-label">Home Care Available</span>
+      </div>
     </div>
   </div>
-  <div class="hero-visual">
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcTiJHWXkxaEVzNwKOo75eU5_KNqIlvOPdB1u-r1tj1l7WW46Sg8-axbSILGFINcpCpmEIWXEvXKFSq1r6ziAJH2szModwjL5hpxTsFl1s6Fx7rQgWbRJnF6GEqCA_YtY5YAFfUeIipJZ3XyZ4ugLw-d9XCm_TySZ1cnkhHTAnN6bHN9WwOxS_XBMnoUk/s796/hero.PNG"
-      alt="IDÉAL Speech and Hearing Solutions — Best Audiology Clinic Mangalore"
-      onerror="this.onerror=null;this.src='hero.PNG'" />
+
+  <div class="hero-scroll-hint">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
   </div>
 </section>
 
