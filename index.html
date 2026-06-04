@@ -211,13 +211,17 @@
     #brands .section-title em { color: #c4748e; }
     #brands .section-desc { color: rgba(255,255,255,0.5); margin: 0 auto 48px; }
     .brands-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-    .brand-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 40px 28px; text-align: center; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .brand-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 28px; text-align: center; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; gap: 14px; }
     .brand-card:hover { background: rgba(122,28,62,0.2); border-color: rgba(122,28,62,0.4); transform: translateY(-3px); }
     .brand-logo-img { height: 56px; width: auto; max-width: 140px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.75; transition: opacity 0.3s; }
     .brand-card:hover .brand-logo-img { opacity: 1; }
+    .brand-logo-box { background: #fff; border-radius: 4px; padding: 14px 24px; display: flex; align-items: center; justify-content: center; min-height: 72px; width: 100%; }
+    .brand-logo-box img { height: 44px; width: auto; max-width: 160px; object-fit: contain; display: block; }
     .brand-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: rgba(255,255,255,0.85); }
-    .brand-desc { font-size: 0.82rem; line-height: 1.65; color: rgba(255,255,255,0.45); }
-    .brand-tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(196,116,142,0.4); color: #c4748e; border-radius: 100px; margin-top: 4px; }
+    .brand-desc { font-size: 0.82rem; line-height: 1.65; color: rgba(255,255,255,0.45); flex: 1; }
+    .brand-tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; border: 1px solid rgba(196,116,142,0.4); color: #c4748e; border-radius: 100px; }
+    .brand-wa-btn { display: inline-flex; align-items: center; gap: 6px; background: #25D366; color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 2px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; transition: all 0.2s; margin-top: auto; }
+    .brand-wa-btn:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,0.35); }
 
     /* ── GALLERY ── */
     #gallery { }
@@ -578,45 +582,63 @@
   <div class="brands-grid">
 
     <div class="brand-card" data-reveal>
-      <img class="brand-logo-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhg_TlmHOzg_4JLbRWnIUG5bxcPPbMjxeKqXxjC68Yn_vknIBtRn0SxYyDhcO6am5aK0Xb5JxmdvPnv6xhna2qyFUWSoONx7N9ZgsmPWSEWGzt1HuEmzG1MzwwP-pvEx1aTGF4TA049SXKSDDM7j5tYG1tEmwpFFCp_Nxg5UFNZxJTOPjgm4XA7mIjCpWI/s320/Widex.PNG" alt="Widex Hearing Aids Mangalore" loading="lazy" onerror="this.style.display='none'" />
+      <div class="brand-logo-box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhg_TlmHOzg_4JLbRWnIUG5bxcPPbMjxeKqXxjC68Yn_vknIBtRn0SxYyDhcO6am5aK0Xb5JxmdvPnv6xhna2qyFUWSoONx7N9ZgsmPWSEWGzt1HuEmzG1MzwwP-pvEx1aTGF4TA049SXKSDDM7j5tYG1tEmwpFFCp_Nxg5UFNZxJTOPjgm4XA7mIjCpWI/s320/Widex.PNG" alt="Widex Hearing Aids Mangalore" loading="lazy" />
+      </div>
       <div class="brand-name">Widex</div>
       <p class="brand-desc">Widex believes your hearing is best served by natural sound. Their hearing aids are engineered to process sound as close to the natural hearing system as possible — so natural, you might forget you even have hearing loss.</p>
       <span class="brand-tag">⭐ Leading Authorised Dealer in Mangalore</span>
+      <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Widex%20hearing%20aids.%20Please%20guide%20me." target="_blank" class="brand-wa-btn">💬 Enquire on WhatsApp</a>
     </div>
 
     <div class="brand-card" data-reveal>
-      <img class="brand-logo-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRnEWpQad5JGMQyyVrKyJzZ6RDRahp1CQwHRwm_fwXzvmaDoGrKnBCAC1T7DZP8Czvedi62tE2nhaIBSfaVEOMsyLHAdr9rinPpnFToKpID6pME7JpeTDCk04BQX4dPoWZz9e9la3CXCkYNQ-vAdwFd20BVzas1wUSjomCnf4w1oSt9UuHA9w06Q4FGH8/s320/Phonak.PNG" alt="Phonak Hearing Aids Mangalore" loading="lazy" onerror="this.style.display='none'" />
+      <div class="brand-logo-box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRnEWpQad5JGMQyyVrKyJzZ6RDRahp1CQwHRwm_fwXzvmaDoGrKnBCAC1T7DZP8Czvedi62tE2nhaIBSfaVEOMsyLHAdr9rinPpnFToKpID6pME7JpeTDCk04BQX4dPoWZz9e9la3CXCkYNQ-vAdwFd20BVzas1wUSjomCnf4w1oSt9UuHA9w06Q4FGH8/s320/Phonak.PNG" alt="Phonak Hearing Aids Mangalore" loading="lazy" />
+      </div>
       <div class="brand-name">Phonak</div>
       <p class="brand-desc">Phonak is a global leader in hearing solutions. Their innovative technology, including the Roger wireless system and AutoSense OS, delivers exceptional speech understanding even in the most challenging listening environments.</p>
       <span class="brand-tag">Authorised Dealer</span>
+      <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Phonak%20hearing%20aids.%20Please%20guide%20me." target="_blank" class="brand-wa-btn">💬 Enquire on WhatsApp</a>
     </div>
 
     <div class="brand-card" data-reveal>
-      <img class="brand-logo-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=200&q=80&fit=crop" alt="Signia Hearing Aids Mangalore" loading="lazy" onerror="this.style.display='none'" style="filter:brightness(0) invert(1);opacity:0.6;height:40px;" />
+      <div class="brand-logo-box" style="background:#fff;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:#003087;letter-spacing:0.05em;">Signia</span>
+      </div>
       <div class="brand-name">Signia</div>
-      <p class="brand-desc">Signia combines cutting-edge hearing technology with elegant design. Known for the Own Voice Processing (OVP) technology, Signia hearing aids are crafted to make your own voice sound completely natural while delivering outstanding sound quality.</p>
+      <p class="brand-desc">Signia combines cutting-edge hearing technology with elegant design. Known for Own Voice Processing (OVP) technology, Signia hearing aids make your own voice sound completely natural while delivering outstanding sound quality.</p>
       <span class="brand-tag">Authorised Dealer</span>
+      <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Signia%20hearing%20aids.%20Please%20guide%20me." target="_blank" class="brand-wa-btn">💬 Enquire on WhatsApp</a>
     </div>
 
     <div class="brand-card" data-reveal>
-      <img class="brand-logo-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgg7rZK1Ma-Aw6QgxJtI_TZx8JsApSvltCzCXVLoyebQ2ymziywxzOzPeXzjODDdq4vPpcGAIhQ4Uk12qM2RI4-hZlk3GeOd6H6ZKnZnDBJNn-FUNWGNEv3u6T6ASTlsNOIeEcwzKb0ej-9lo4K7tBVKTOmzZLRa5pHgYLpjmn24jq48wWavVcf1bmpqyA/s320/GN-Resound.PNG" alt="ReSound Hearing Aids Mangalore" loading="lazy" onerror="this.style.display='none'" />
+      <div class="brand-logo-box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgg7rZK1Ma-Aw6QgxJtI_TZx8JsApSvltCzCXVLoyebQ2ymziywxzOzPeXzjODDdq4vPpcGAIhQ4Uk12qM2RI4-hZlk3GeOd6H6ZKnZnDBJNn-FUNWGNEv3u6T6ASTlsNOIeEcwzKb0ej-9lo4K7tBVKTOmzZLRa5pHgYLpjmn24jq48wWavVcf1bmpqyA/s320/GN-Resound.PNG" alt="ReSound Hearing Aids Mangalore" loading="lazy" />
+      </div>
       <div class="brand-name">GN ReSound</div>
       <p class="brand-desc">GN ReSound pioneers smart hearing solutions with direct Bluetooth streaming to smartphones and TVs. Their AI-driven sound processing and industry-leading rechargeable technology offer unmatched connectivity and listening comfort.</p>
       <span class="brand-tag">Authorised Dealer</span>
+      <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20GN%20ReSound%20hearing%20aids.%20Please%20guide%20me." target="_blank" class="brand-wa-btn">💬 Enquire on WhatsApp</a>
     </div>
 
     <div class="brand-card" data-reveal>
-      <img class="brand-logo-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr1VEgq770-9toAKxeF4TOM7g_vAezge9R6jtaqgnE1zAZ2GppZSejxLDZrA-AiU9lpgGtOenHLcxHho2xNQ3G5HlShTHDe1XDPdQGUFCFnFdWiWfu9z3NXLtCud004si4UnLmtBUAseuVCo4C96vDoLeNvy5ygt_ByHqVoJAWGAufODmn2jI-8gB9dtk/s320/Unitron.PNG" alt="Unitron Hearing Aids Mangalore" loading="lazy" onerror="this.style.display='none'" />
+      <div class="brand-logo-box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr1VEgq770-9toAKxeF4TOM7g_vAezge9R6jtaqgnE1zAZ2GppZSejxLDZrA-AiU9lpgGtOenHLcxHho2xNQ3G5HlShTHDe1XDPdQGUFCFnFdWiWfu9z3NXLtCud004si4UnLmtBUAseuVCo4C96vDoLeNvy5ygt_ByHqVoJAWGAufODmn2jI-8gB9dtk/s320/Unitron.PNG" alt="Unitron Hearing Aids Mangalore" loading="lazy" />
+      </div>
       <div class="brand-name">Unitron</div>
       <p class="brand-desc">Unitron hearing aids are built on a philosophy of putting people first. Their Log It All data-logging feature and the Flex:trial programme allow patients to experience hearing aids in real life before making a commitment.</p>
       <span class="brand-tag">Authorised Dealer — Sonova Group</span>
+      <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Unitron%20hearing%20aids.%20Please%20guide%20me." target="_blank" class="brand-wa-btn">💬 Enquire on WhatsApp</a>
     </div>
 
-    <div class="brand-card" data-reveal style="border-color:rgba(196,116,142,0.3);background:rgba(122,28,62,0.15);">
-      <div style="font-size:2rem;margin-bottom:4px;">🧠</div>
+    <div class="brand-card" data-reveal style="border-color:rgba(196,116,142,0.4);background:rgba(122,28,62,0.18);">
+      <div class="brand-logo-box" style="background:#fff;">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#003087;letter-spacing:0.03em;">Cochlear™</span>
+      </div>
       <div class="brand-name" style="color:#c4748e;">Cochlear™</div>
-      <p class="brand-desc">Cochlear™ is the global leader in implantable hearing devices. IDÉAL Speech and Hearing Solutions is Mangalore's exclusive provider of Cochlear™ Implant Mapping — the only clinic offering this critical service for CI recipients in the district.</p>
-      <span class="brand-tag" style="border-color:rgba(196,116,142,0.6);">★ Exclusive Mapping Centre — Mangalore</span>
+      <p class="brand-desc">Cochlear™ is the global leader in implantable hearing devices. IDÉAL Speech and Hearing Solutions is Mangalore's <strong style="color:rgba(255,255,255,0.85);">exclusive</strong> provider of Cochlear™ Implant Mapping — the only clinic in the district offering this critical service for CI recipients.</p>
+      <span class="brand-tag" style="border-color:rgba(196,116,142,0.6);color:#c4748e;">★ Exclusive Mapping Centre — Mangalore</span>
+      <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Cochlear%20Implant%20Mapping.%20Please%20guide%20me." target="_blank" class="brand-wa-btn" style="background:#25D366;">💬 Book Cochlear™ Mapping</a>
     </div>
 
   </div>
