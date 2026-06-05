@@ -115,6 +115,15 @@
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--burgundy); }
 
+    /* HERO SLIDER */
+    .hero-slides{position:absolute;inset:0;}
+    .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;}
+    .hero-slide.active{opacity:1;}
+    .hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center;transform-origin:center;animation:kenburns 18s ease-in-out infinite alternate;}
+    .hero-dots{position:absolute;bottom:28px;left:6vw;z-index:4;display:flex;gap:8px;}
+    .hero-dot{width:28px;height:3px;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.3s;border:none;padding:0;}
+    .hero-dot.active{background:#fff;width:44px;}
+
     /* ── HERO ── */
     #hero {
       margin-top: 72px;
@@ -393,6 +402,20 @@
     .wa-float:hover { transform: scale(1.1); }
     @keyframes pulse-wa { 0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); } 50% { box-shadow: 0 4px 32px rgba(37,211,102,0.65); } }
 
+    /* GALLERY LIGHTBOX */
+    .gallery-item{cursor:pointer;position:relative;}
+    .gallery-item::after{content:"";position:absolute;inset:0;background:rgba(122,28,62,0.35);opacity:0;transition:opacity 0.3s;}
+    .gallery-item:hover::after{opacity:1;}
+    .lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:3000;align-items:center;justify-content:center;}
+    .lb-overlay.active{display:flex;}
+    .lb-inner{position:relative;max-width:90vw;max-height:90vh;}
+    .lb-img{max-width:90vw;max-height:85vh;object-fit:contain;display:block;}
+    .lb-close{position:fixed;top:20px;right:24px;background:rgba(255,255,255,0.15);border:none;color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.4rem;cursor:pointer;}
+    .lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;width:48px;height:48px;border-radius:50%;font-size:1.8rem;cursor:pointer;}
+    .lb-prev{left:20px;} .lb-next{right:20px;}
+    .lb-prev:hover,.lb-next:hover,.lb-close:hover{background:rgba(122,28,62,0.7);}
+    .lb-counter{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.5);font-size:0.8rem;letter-spacing:0.1em;}
+
     /* ── MODAL ── */
     .modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(26,13,16,0.65); backdrop-filter: blur(6px); align-items: center; justify-content: center; padding: 20px; }
     .modal-overlay.active { display: flex; }
@@ -413,6 +436,12 @@
     .modal-footer-bar { padding: 16px 32px; border-top: 1px solid rgba(122,28,62,0.1); display: flex; justify-content: flex-end; flex-shrink: 0; background: var(--white); }
     .modal-footer-bar button { background: var(--burgundy); color: #fff; border: none; padding: 10px 28px; border-radius: 2px; font-family: 'Jost', sans-serif; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: background 0.2s; }
     .modal-footer-bar button:hover { background: var(--burgundy-dark); }
+
+    /* BRAND MODAL */
+    .modal-body img.bm-product-img{width:100%;max-height:280px;object-fit:cover;display:block;}
+    .modal-body-text{padding:24px 28px;font-size:0.92rem;line-height:1.85;color:var(--gray-text);}
+    .modal-wa-link{display:inline-flex;align-items:center;gap:6px;background:#25D366;color:#fff;text-decoration:none;padding:10px 20px;border-radius:2px;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;}
+    #brand-modal .modal-footer-bar{display:flex;justify-content:space-between;align-items:center;}
 
     /* ── ANIMATIONS ── */
     [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -460,7 +489,7 @@
 <!-- NAV -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
-    <img src="logo.png" alt="IDÉAL Speech and Hearing Solutions Logo" onerror="this.onerror=null;this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjX_lLepJUw20SndTuvPLZKe13g6rEiLZvDOmCBrt_5yJUpUXVkcH9C83SzkAw80DlrY8s6zUfwrq-hyFp5kkw-Osgs03YaQHaEyfZqief9WUDLsobMrLp6vVSJUyxZaQZH2yI1LjPjRUalguGiuEzWme6DE5amiK4O9x3HzBuERoOv33ItmWtyjEvdfQ8/s289/logo.png'">
+    <img src="logo.png" alt="IDÉAL Speech and Hearing Solutions Logo" onerror="this.onerror=null;this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikD3AN1fU02SBUFlP5W9W3ayYXdydgYOCW0MRBx6n1-St_mltdyk5e6ck_x4XmS_BIeXwc5G_PQewiDVEeJVYsiFiXqy7xgFfcLaPchHgGowQoPuhnkAZ3rE7HGIDw6J6-yiEWc7SCyUImlAThtNGuQw1X5JS5f7eckmUJb76Y1yoxsAjvqr1qH9Co6Do/s796/hero.PNG'">
     <span style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--burgundy);letter-spacing:0.05em;">IDÉAL</span>
   </a>
   <ul class="nav-links">
@@ -492,13 +521,19 @@
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg">
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcTiJHWXkxaEVzNwKOo75eU5_KNqIlvOPdB1u-r1tj1l7WW46Sg8-axbSILGFINcpCpmEIWXEvXKFSq1r6ziAJH2szModwjL5hpxTsFl1s6Fx7rQgWbRJnF6GEqCA_YtY5YAFfUeIipJZ3XyZ4ugLw-d9XCm_TySZ1cnkhHTAnN6bHN9WwOxS_XBMnoUk/s796/hero.PNG"
-      alt="IDÉAL Speech and Hearing Solutions Mangalore"
-      onerror="this.onerror=null;this.src='hero.PNG'" />
-    <div class="hero-bg-overlay"></div>
-    <div class="hero-bg-overlay2"></div>
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikD3AN1fU02SBUFlP5W9W3ayYXdydgYOCW0MRBx6n1-St_mltdyk5e6ck_x4XmS_BIeXwc5G_PQewiDVEeJVYsiFiXqy7xgFfcLaPchHgGowQoPuhnkAZ3rE7HGIDw6J6-yiEWc7SCyUImlAThtNGuQw1X5JS5f7eckmUJb76Y1yoxsAjvqr1qH9Co6Do/s796/hero.PNG" alt="IDÉAL Speech and Hearing Solutions" />
+    </div>
+    <div class="hero-slide">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5-RVVa6qpI6Rv4WL7_AVYMeftebBcgdV7wV89CWmjMH2Jq2ZM0xolv4FQsbXVWzlO-iybtsEvtP0v2p6jsP99BgTZ4OIuWuMWgL2N9UHBTy1ab6lJnTsQxIodvccMPC9cbLWtyMETOvU0i2-mLEanX3WA-JIYYyuuXHJ0mcte4u5Ealy7_f2RYst0VnE/s2560/banner.jpg" alt="IDÉAL Clinic Banner" />
+    </div>
+    <div class="hero-slide">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZWNFF3EHBjjkdS5JmQTSDp8VfV7eCdI5Ah4TDN-ju-kIiVaqSPoJmbky-WUmpMSO2nMYajgUxXMHkkIrficJmP5hFVEiBx6y_nWBkZVHN1AwzZQW2fZVj6SMI_9fzyBHG7QKIwzgdpP2u23acn_KgDI1T4z_HYlZz36JaOvaR9B3RQOLE1-Qwwgx-vOk/s8160/IMG_20260523_183525.jpg" alt="IDÉAL Clinic" />
+    </div>
   </div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-bg-overlay2"></div>
 
   <div class="hero-content">
     <div class="hero-badge">Mangalore's Premier Hearing Care Centre</div>
@@ -532,6 +567,11 @@
     </div>
   </div>
 
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" onclick="goSlide(0)"></button>
+    <button class="hero-dot" onclick="goSlide(1)"></button>
+    <button class="hero-dot" onclick="goSlide(2)"></button>
+  </div>
   <div class="hero-scroll-hint">
     <div class="hero-scroll-line"></div>
     <span>Scroll</span>
@@ -562,7 +602,7 @@
 <section id="about">
   <div class="about-logo-wrap" data-reveal>
     <img src="logo.png" alt="IDÉAL Speech and Hearing Solutions"
-      onerror="this.onerror=null;this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjX_lLepJUw20SndTuvPLZKe13g6rEiLZvDOmCBrt_5yJUpUXVkcH9C83SzkAw80DlrY8s6zUfwrq-hyFp5kkw-Osgs03YaQHaEyfZqief9WUDLsobMrLp6vVSJUyxZaQZH2yI1LjPjRUalguGiuEzWme6DE5amiK4O9x3HzBuERoOv33ItmWtyjEvdfQ8/s289/logo.png'" />
+      onerror="this.onerror=null;this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikD3AN1fU02SBUFlP5W9W3ayYXdydgYOCW0MRBx6n1-St_mltdyk5e6ck_x4XmS_BIeXwc5G_PQewiDVEeJVYsiFiXqy7xgFfcLaPchHgGowQoPuhnkAZ3rE7HGIDw6J6-yiEWc7SCyUImlAThtNGuQw1X5JS5f7eckmUJb76Y1yoxsAjvqr1qH9Co6Do/s796/hero.PNG'" />
   </div>
   <div data-reveal>
     <p class="section-label">About Us</p>
@@ -598,7 +638,11 @@
     </div>
     <div class="cochlear-visual" data-reveal>
       <div class="cochlear-img-wrap">
-        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80" alt="Cochlear Implant Mapping Mangalore — IDÉAL Speech and Hearing Solutions" loading="lazy" />
+        <div style="background:#111;border-radius:2px;padding:32px;text-align:center;color:rgba(255,255,255,0.5);">
+          <div style="font-size:3rem;margin-bottom:12px;">🎬</div>
+          <p style="font-size:0.9rem;line-height:1.6;">Our Cochlear™ Implant Mapping video is hosted on Blogger.<br>
+          <a href="https://idealspeechandhearingsolutions.blogspot.com" target="_blank" style="color:#c4748e;">Watch on our Blogger channel →</a></p>
+        </div>
       </div>
       <div class="cochlear-exclusive">Only in Mangalore</div>
     </div>
@@ -614,7 +658,7 @@
   </div>
   <div class="services-grid">
     <div class="service-card" data-reveal>
-      <img class="service-card-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Hearing Assessment Mangalore" loading="lazy" />
+      <img class="service-card-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTe2_1LlFW2rkMlvNl0Mg1OABcFb-O8qWlkZV-xoGJuRJB6Juh5BRvzdy6VJ44hdXlT4Pcb1KEmGAeels-7LRMceeVGuahQygl3lI3RA_bmWIwUEbWycKFYIbe2_QBpdhHj4ToW7nWAMk-We5IFnNpZV2XQg3iCUrFq-6DnUJBNk0qarh1XriMVKx2XgI/s1000/hearing%20assement.jpg" alt="Hearing Assessment Mangalore" loading="lazy" />
       <div class="service-card-body">
         <div class="service-icon">👂</div>
         <h3 class="service-title">Hearing Assessments</h3>
@@ -622,7 +666,7 @@
       </div>
     </div>
     <div class="service-card" data-reveal>
-      <img class="service-card-img" src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80" alt="Hearing Aid Fitting Mangalore — Phonak Widex Signia ReSound Unitron" loading="lazy" />
+      <img class="service-card-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUSr3SgIdb7KKS-5N669-CJsGVn-ySozakqP6NBkr7uWM8Cv3fHYd00OYLUIGs6D68a9qI_BsW8y2tpKr1E6qcOk5wL159v3huoaF5sdl5dlDGDjP1rhyFY8X4bSQ_vB2WNWXc4bkcpd2BNqw4dMV9Q1Wr_ZHTv8n8jSerPqBkdRwW_oEBeAjMBWNVZT0/s1188/hearing%20aid%20fitting.jpg" alt="Hearing Aid Fitting Mangalore" loading="lazy" />
       <div class="service-card-body">
         <div class="service-icon">🔊</div>
         <h3 class="service-title">Hearing Aid Fitting</h3>
@@ -630,7 +674,7 @@
       </div>
     </div>
     <div class="service-card" data-reveal>
-      <img class="service-card-img" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80" alt="Speech Therapy Mangalore" loading="lazy" />
+      <img class="service-card-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhJeC8OLWZUerEVTXnxqj4Ppa8n3FVJqaHb0-QG5XHgA6w3USXVdBAj49Ir6i3OMF8GTbGPhyzWrKCNPGVCkaExiPiIqjpBlExill7ZN6II_KSYG9OvstkzIVaIU6LvSJtEHeRoB-nzO6RqDFQugJAIX9wP3QCDPaUnoZ6QB_b_FLosfyAtBBbQjWII6QA/s600/speech%20therapy.jpg" alt="Speech Therapy Mangalore" loading="lazy" />
       <div class="service-card-body">
         <div class="service-icon">🗣️</div>
         <h3 class="service-title">Speech Therapy</h3>
@@ -638,7 +682,7 @@
       </div>
     </div>
     <div class="service-card" data-reveal>
-      <img class="service-card-img" src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&q=80" alt="Vestibular Testing Mangalore" loading="lazy" />
+      <img class="service-card-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHBrbCVJFplUg8NF6ehPoRrmbI6LaQbTKdeCWc2Cv9pXXQpq1sr_pF89_SIRfBYQ3LasPrH2q1Z8k_bsC1t97-H527fQrcG4kamENytUVfW02-fxIrCWb_SvQoDanJvGzrq1xN0Ho6T2UrdEjw0pZ9m3gbSGVM7S7ZpUkYeiF2Tgz-6cRLkEpTdjH1duM/s642/vemp.jpg" alt="Vestibular Testing Mangalore" loading="lazy" />
       <div class="service-card-body">
         <div class="service-icon">🌀</div>
         <h3 class="service-title">Vestibular Testing</h3>
@@ -646,7 +690,7 @@
       </div>
     </div>
     <div class="service-card" data-reveal>
-      <img class="service-card-img" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Home Care Audiology Services Mangalore" loading="lazy" />
+      <img class="service-card-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRI0wo9VYRxSMXE8YHE6g6Ey71NiwCB-Dubeelc7K916eGaiOoHR6AKI9EH80M5veADdAu8mgiZ6_SwLaS0csTGIvCvB2Sb_JeUVopESHZsouJ9NVWHH-qHktQMr63rEx0Ly5VjerVQ3tAXUzJ5E4gD8Og_tVCYHCIF0NLyOco-5UpvNoosIlMXv0nO7E/s1200/homecare.jpg" alt="Home Care Services Mangalore" loading="lazy" />
       <div class="service-card-body">
         <div class="service-icon">🏠</div>
         <h3 class="service-title">Home Care Services</h3>
@@ -654,7 +698,7 @@
       </div>
     </div>
     <div class="service-card" data-reveal>
-      <img class="service-card-img" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80" alt="Cochlear Implant Mapping Mangalore" loading="lazy" />
+      <img class="service-card-img" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioECw0vtmC9XIqW8RJj7ayzSZ4NkVOtiFMhJvMdTcMBYdAryb9P1f4zsD5b5XfNgOQxm58tjxZQGdKgqUnhnqf59x8krdwWcLKbjGUxHwuzZcNoNb4cdy5OOYaO0gcnTuY-5DOdUWbnC0osi5t3gMQW4LyXmg98jZeFEBpSmldNUjFaDFhopzX7FYzz88/s736/mapping.jpg" alt="Cochlear Implant Mapping Mangalore" loading="lazy" />
       <div class="service-card-body">
         <div class="service-icon">🧠</div>
         <h3 class="service-title">Cochlear™ Implant Mapping</h3>
@@ -673,7 +717,7 @@
   </div>
   <div class="diag-grid">
     <div class="diag-card" data-reveal>
-      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="OAE Test Mangalore — Otoacoustic Emissions" loading="lazy" />
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZb0i8HVluu0Y0LwZ_s0H5-u_h28yjGidEWt5DcosXvBV9NnTgod89saL-EHqu4S__3PVFs_uXkNTMYqsOwWLqhqJQ4VdERmbmobyGimoBu7jvpG0YryS9l6eP8-5Oqmkkes6y00yn6TzhD4jmO_UAXwNtFG8irZcKb9AA73GhPS7Re2heXSLdP6bCYUA/s654/oae%20test.jpg" alt="OAE Test Mangalore" loading="lazy" />
       <div class="diag-card-body">
         <div class="diag-number">Test 01</div>
         <h3 class="diag-title">OAE — Otoacoustic Emissions</h3>
@@ -681,7 +725,7 @@
       </div>
     </div>
     <div class="diag-card" data-reveal>
-      <img src="https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=600&q=80" alt="Newborn Hearing Screening Mangalore" loading="lazy" />
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgQukMvHiaPl1Z1Es1eHihACl6uMv3OSPSsDM1i2mCSY4H4EFRNtqTMxQj721GT-58eUOw2nfPvh02UUMZeBNjUe27jxKpWFXnpytBVgrTaCLmK2BQIMUL5WLZ0Ic1Cb9M3g2PoTuROcgUEgbPUhEiyaFCerKoXY_cXUsQiYcEAx08UKa1iRv_hzNknqpg/s850/new%20born.jpg" alt="Newborn Hearing Screening Mangalore" loading="lazy" />
       <div class="diag-card-body">
         <div class="diag-number">Test 02</div>
         <h3 class="diag-title">Newborn Hearing Screening</h3>
@@ -689,7 +733,7 @@
       </div>
     </div>
     <div class="diag-card" data-reveal>
-      <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80" alt="ABR Test Mangalore — Auditory Brainstem Response" loading="lazy" />
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi_VUyfdoyQs2ktFF_Z4_v25VLlHm-qM0sOdkIzNeHi668IQD9wjCHC9oyQnbwhMY8_1z7Ex6O1mKuPkhGVsUrEppFWiowMEPxo8Ou99oQfoIB3rCGae0dRWkpJe5HeAAPrc_7OYyewUXDj6_-ZIxJIyVfbxO_gzHk__trCb-_8JJZ-ZpwvA3DJOB9Yxm4/s520/abr%20test.jpg" alt="ABR Test Mangalore" loading="lazy" />
       <div class="diag-card-body">
         <div class="diag-number">Test 03</div>
         <h3 class="diag-title">ABR — Auditory Brainstem Response</h3>
@@ -697,7 +741,7 @@
       </div>
     </div>
     <div class="diag-card" data-reveal>
-      <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=600&q=80" alt="VEMP Test Mangalore — Vestibular Evoked Myogenic Potentials" loading="lazy" />
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHBrbCVJFplUg8NF6ehPoRrmbI6LaQbTKdeCWc2Cv9pXXQpq1sr_pF89_SIRfBYQ3LasPrH2q1Z8k_bsC1t97-H527fQrcG4kamENytUVfW02-fxIrCWb_SvQoDanJvGzrq1xN0Ho6T2UrdEjw0pZ9m3gbSGVM7S7ZpUkYeiF2Tgz-6cRLkEpTdjH1duM/s642/vemp.jpg" alt="VEMP Test Mangalore" loading="lazy" />
       <div class="diag-card-body">
         <div class="diag-number">Test 04</div>
         <h3 class="diag-title">VEMP — Vestibular Evoked Myogenic Potentials</h3>
@@ -705,7 +749,7 @@
       </div>
     </div>
     <div class="diag-card" data-reveal style="grid-column: span 1;">
-      <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=600&q=80" alt="Cochlear Implant Mapping Mangalore — Only Centre" loading="lazy" />
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioECw0vtmC9XIqW8RJj7ayzSZ4NkVOtiFMhJvMdTcMBYdAryb9P1f4zsD5b5XfNgOQxm58tjxZQGdKgqUnhnqf59x8krdwWcLKbjGUxHwuzZcNoNb4cdy5OOYaO0gcnTuY-5DOdUWbnC0osi5t3gMQW4LyXmg98jZeFEBpSmldNUjFaDFhopzX7FYzz88/s736/mapping.jpg" alt="Cochlear Implant Mapping Mangalore" loading="lazy" />
       <div class="diag-card-body">
         <div class="diag-number">Test 05 &nbsp;·&nbsp; <span style="color:var(--burgundy);font-weight:600;">Mangalore Exclusive</span></div>
         <h3 class="diag-title">Cochlear™ Implant Mapping</h3>
@@ -730,7 +774,7 @@
   <p class="section-desc" style="margin:0 auto 48px;">Every hearing aid we fit is a genuine, brand-authorised product backed by manufacturer warranty, expert fitting, and our ongoing care and support.</p>
   <div class="brands-grid">
 
-    <div class="brand-card" data-reveal>
+    <div class="brand-card" data-reveal onclick="openBrandModal('widex')" style="cursor:pointer;">
       <div class="brand-logo-box">
         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhg_TlmHOzg_4JLbRWnIUG5bxcPPbMjxeKqXxjC68Yn_vknIBtRn0SxYyDhcO6am5aK0Xb5JxmdvPnv6xhna2qyFUWSoONx7N9ZgsmPWSEWGzt1HuEmzG1MzwwP-pvEx1aTGF4TA049SXKSDDM7j5tYG1tEmwpFFCp_Nxg5UFNZxJTOPjgm4XA7mIjCpWI/s320/Widex.PNG" alt="Widex Hearing Aids Mangalore" loading="lazy" />
       </div>
@@ -740,7 +784,7 @@
       <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Widex%20hearing%20aids.%20Please%20guide%20me." target="_blank" class="brand-wa-btn">💬 Enquire on WhatsApp</a>
     </div>
 
-    <div class="brand-card" data-reveal>
+    <div class="brand-card" data-reveal onclick="openBrandModal('phonak')" style="cursor:pointer;">
       <div class="brand-logo-box">
         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRnEWpQad5JGMQyyVrKyJzZ6RDRahp1CQwHRwm_fwXzvmaDoGrKnBCAC1T7DZP8Czvedi62tE2nhaIBSfaVEOMsyLHAdr9rinPpnFToKpID6pME7JpeTDCk04BQX4dPoWZz9e9la3CXCkYNQ-vAdwFd20BVzas1wUSjomCnf4w1oSt9UuHA9w06Q4FGH8/s320/Phonak.PNG" alt="Phonak Hearing Aids Mangalore" loading="lazy" />
       </div>
@@ -750,7 +794,7 @@
       <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Phonak%20hearing%20aids.%20Please%20guide%20me." target="_blank" class="brand-wa-btn">💬 Enquire on WhatsApp</a>
     </div>
 
-    <div class="brand-card" data-reveal>
+    <div class="brand-card" data-reveal onclick="openBrandModal('signia')" style="cursor:pointer;">
       <div class="brand-logo-box" style="background:#fff;">
         <span style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:#003087;letter-spacing:0.05em;">Signia</span>
       </div>
@@ -760,7 +804,7 @@
       <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Signia%20hearing%20aids.%20Please%20guide%20me." target="_blank" class="brand-wa-btn">💬 Enquire on WhatsApp</a>
     </div>
 
-    <div class="brand-card" data-reveal>
+    <div class="brand-card" data-reveal onclick="openBrandModal('resound')" style="cursor:pointer;">
       <div class="brand-logo-box">
         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgg7rZK1Ma-Aw6QgxJtI_TZx8JsApSvltCzCXVLoyebQ2ymziywxzOzPeXzjODDdq4vPpcGAIhQ4Uk12qM2RI4-hZlk3GeOd6H6ZKnZnDBJNn-FUNWGNEv3u6T6ASTlsNOIeEcwzKb0ej-9lo4K7tBVKTOmzZLRa5pHgYLpjmn24jq48wWavVcf1bmpqyA/s320/GN-Resound.PNG" alt="ReSound Hearing Aids Mangalore" loading="lazy" />
       </div>
@@ -770,7 +814,7 @@
       <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20GN%20ReSound%20hearing%20aids.%20Please%20guide%20me." target="_blank" class="brand-wa-btn">💬 Enquire on WhatsApp</a>
     </div>
 
-    <div class="brand-card" data-reveal>
+    <div class="brand-card" data-reveal onclick="openBrandModal('unitron')" style="cursor:pointer;">
       <div class="brand-logo-box">
         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr1VEgq770-9toAKxeF4TOM7g_vAezge9R6jtaqgnE1zAZ2GppZSejxLDZrA-AiU9lpgGtOenHLcxHho2xNQ3G5HlShTHDe1XDPdQGUFCFnFdWiWfu9z3NXLtCud004si4UnLmtBUAseuVCo4C96vDoLeNvy5ygt_ByHqVoJAWGAufODmn2jI-8gB9dtk/s320/Unitron.PNG" alt="Unitron Hearing Aids Mangalore" loading="lazy" />
       </div>
@@ -798,23 +842,34 @@
   <p class="section-label">Gallery</p>
   <h2 class="section-title">Our <em>Clinic &amp; Work</em></h2>
   <div class="gallery-grid">
-    <div class="gallery-item">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBEGOOcaNSdDuJcQtzK_7w-6xn_p5owHcUIrTvkqus7FRGIP0yjyK5Js9uj2oNngi3wa9F4NGrJweMEQfFtqs9dDI-m_uif8GKFs7jCELVQWayJwM2SgowCLAqh6mpy3Px0TVyxOuKBlT89cz_31RrUnOOSly11TsDuNGVEyGFnSNLcYXH62yW9oTmjQg/s600/2025-04-06.jpg" alt="IDÉAL Speech and Hearing Solutions Clinic Mangalore" loading="lazy" />
+    <div class="gallery-item" onclick="openLightbox(0)">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZWNFF3EHBjjkdS5JmQTSDp8VfV7eCdI5Ah4TDN-ju-kIiVaqSPoJmbky-WUmpMSO2nMYajgUxXMHkkIrficJmP5hFVEiBx6y_nWBkZVHN1AwzZQW2fZVj6SMI_9fzyBHG7QKIwzgdpP2u23acn_KgDI1T4z_HYlZz36JaOvaR9B3RQOLE1-Qwwgx-vOk/s320/IMG_20260523_183525.jpg" alt="IDÉAL Clinic Mangalore" loading="lazy" />
     </div>
-    <div class="gallery-item">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfIkbCZ7R3qvTjwWBThtvATAy1q8iB4wgkrZgCLGesR617GawzeO6T08_bD8J3g2Ekg0JQ-3n7ET7pxWJFHeFekLVZagrVK_SyUFl9urORGDjUaVGFpKcRLw-wXsGi8HNg3EyY2rrD-KZHpr8IkdzN1ASVCAsUKPnz58jIkPwARhxFe9TzlLfE1TatDKY/s1200/product1.jpg" alt="Hearing Aid Products Mangalore" loading="lazy" />
+    <div class="gallery-item" onclick="openLightbox(1)">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUcieKWK-reTZmS_KdEG6kmEkAUGkAOL4lwS7dFUcpwxD27j1ZqXJnuq5Bu8Von4SJK5IBhbqrZ0_c2L2VNYhYsb5BW8nj5X5WbazJT0NYm8amx9g8JUfQ9h0q8PpI0vGrIaGVbpIhMcih4EBMbFUrkp73B_2D5LlORCozJKlovgJNzfDYSKrrwXfYXBQ/s320/IMG_20260523_183138.jpg" alt="Clinic Interior" loading="lazy" />
     </div>
-    <div class="gallery-item">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiLk6ZWmLJOVIMym5r-C8E20Zb0kc_y2tiXgfUAE3OfHsn90elkTQubZbmWReWjSq08VOI5nJyAKIxk_nONd3h_jUBkG35PfQ0QYi_IOQw8BUby8rGD1sFTx-8nK3yT_5aPU1B0bPzL6BHy9XARN4JyrlJV9rAhBPp2UzeGXh3_0HNfq705LKdNXdAhuDU/s600/Products2.jpg" alt="Hearing Solutions Mangalore" loading="lazy" />
+    <div class="gallery-item" onclick="openLightbox(2)">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidsgDLo-4fqggSd6Her2uXhSLqfxwWlXHW7SebzBBdFS5TI4TL4NYSbT__rrA42tSBMzVcYi4mDUu4Wvfpn7UpwX1eg8JFTU7Jfh6d3L1vwSQWkGdcMMWDZbQu33CZMRU-6bp0A8fS4SIvDi6T9CqtoxWe_IBZ_q-45R77NRGDGtdQpSiNJNwECYH9Dic/s320/IMG_20260523_182451.jpg" alt="Clinic" loading="lazy" />
     </div>
-    <div class="gallery-item">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfQL1gKXiIFGTmYwq3L3xqJ896PIRpVP2fv3mdet3gw_8Ew8LZxLtV0vM7pUou2hqVmF7Ebm97ZEJKYNtlWNpoyDuIYqs-gkkGPYEJ5tYqIAzZ7W5lski4j7hHj5RbmWTvtssBDN_soOdyFkEhsSk76O3pxtushCt20h92_JyV1taTEGQK9Dzns9C7184/s447/product3.jpg" alt="Hearing Aid Brands Mangalore" loading="lazy" />
+    <div class="gallery-item" onclick="openLightbox(3)">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0Cm3KVqZNrPfLhuqAAeuCNQNFis-86Lmz_vda_NCwTTDTtHV3LgV41p4ZSw0OLVn9Co_pMxH2ie_x8kBuUykuSZ_G4vR_uDzu28UW0xxAqWWLenZRLoW5Dg5p-S-3em2rJShnH1LSvJiXfa9HOErD43_iJJa8kHw4pVZta-NNQ8OQ-255u7xfPrxfND8/s320/be05314c-fb4d-46de-9dd0-920a86e73942~1.jpg" alt="Clinic" loading="lazy" />
     </div>
-    <div class="gallery-item">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyVH_stMq8FpJ51A_7AXszFDMY7VfdgMqs2SygsQa6sdiWxzMK-l2ttKXy-yJyeyCtXxcWuN-Q8-tKN813FLUF8Bacd5nqHURB6M27bi59frQvqzWFSTNaI766cGkuKa8ZMytk7zcHpBQECwFltiM9VUyXCI8oP0qWzzMUM35fxEG-U0TCBIZ4M9OitQM/s1000/products4.jpg" alt="Audiologist Mangalore" loading="lazy" />
+    <div class="gallery-item" onclick="openLightbox(4)">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOwZTwrO9GJmocFLOapq_3xa53rSFC0E06B0WXbqsIjq3n2GwmySfOZg8a1-BAtoqNgeam39ja2C5W0MsNBcyWVVOfpHdxZDEWBEtOHaHNiJNQ24MQR_jKGDJ6DRAVmSJB87zPFy_crP9EcaaY7G_bjzcX9WUpBmsHprla13f51a6c2nxcurN4rhTLsSM/s320/a15a58b4-33db-4152-9ebd-71fc2883cca2~1.jpg" alt="Products" loading="lazy" />
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lightbox" onclick="closeLightbox()">
+  <div class="lb-inner" onclick="event.stopPropagation()">
+    <img class="lb-img" id="lb-img" src="" alt="Gallery" />
+  </div>
+  <button class="lb-close" onclick="closeLightbox()">&#x2715;</button>
+  <button class="lb-prev" onclick="lbNav(-1)">&#x2039;</button>
+  <button class="lb-next" onclick="lbNav(1)">&#x203a;</button>
+  <div class="lb-counter" id="lb-counter">1 / 5</div>
+</div>
 
 <!-- LEAD CAPTURE -->
 <section id="lead-form-section">
@@ -840,7 +895,7 @@
       <p>No. 204, Indus Commercial Complex, Arya Samaj Rd,<br>above Ather Electric Scooter Showroom, Kadri, Mangaluru – 575003</p>
     </div>
     <div class="map-wrap">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.230321806984!2d74.84908140992997!3d12.878422987376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35bcdf5773f53%3A0x65623cceb72a0840!2sID%C3%89AL%20Speech%20and%20Hearing%20Solutions!5e0!3m2!1sen!2sin!4v1779995017465!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="IDÉAL Main Clinic Map Mangalore"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d972.3631237577166!2d74.85293102864495!3d12.878599441302313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35bcdf5773f53%3A0x65623cceb72a0840!2sID%C3%89AL%20Speech%20and%20Hearing%20Solutions!5e0!3m2!1sen!2sin!4v1780641271378!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="IDÉAL Main Clinic Map Mangalore"></iframe>
     </div>
     <div class="location-card" style="margin-top:28px;">
       <h4>BestSound IDÉAL Speech and Hearing Solutions</h4>
@@ -911,7 +966,7 @@
   <div class="modal-box" role="dialog" aria-modal="true">
     <div class="modal-header">
       <div class="modal-header-left">
-        <img class="modal-logo" src="logo.png" alt="IDÉAL Logo" onerror="this.onerror=null;this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjX_lLepJUw20SndTuvPLZKe13g6rEiLZvDOmCBrt_5yJUpUXVkcH9C83SzkAw80DlrY8s6zUfwrq-hyFp5kkw-Osgs03YaQHaEyfZqief9WUDLsobMrLp6vVSJUyxZaQZH2yI1LjPjRUalguGiuEzWme6DE5amiK4O9x3HzBuERoOv33ItmWtyjEvdfQ8/s289/logo.png'">
+        <img class="modal-logo" src="logo.png" alt="IDÉAL Logo" onerror="this.onerror=null;this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikD3AN1fU02SBUFlP5W9W3ayYXdydgYOCW0MRBx6n1-St_mltdyk5e6ck_x4XmS_BIeXwc5G_PQewiDVEeJVYsiFiXqy7xgFfcLaPchHgGowQoPuhnkAZ3rE7HGIDw6J6-yiEWc7SCyUImlAThtNGuQw1X5JS5f7eckmUJb76Y1yoxsAjvqr1qH9Co6Do/s796/hero.PNG'">
         <div><p class="modal-label">Legal</p><h2 class="modal-title">Privacy Policy</h2></div>
       </div>
       <button class="modal-close" onclick="closeModal('modal-privacy')">✕</button>
@@ -938,7 +993,7 @@
   <div class="modal-box" role="dialog" aria-modal="true">
     <div class="modal-header">
       <div class="modal-header-left">
-        <img class="modal-logo" src="logo.png" alt="IDÉAL Logo" onerror="this.onerror=null;this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjX_lLepJUw20SndTuvPLZKe13g6rEiLZvDOmCBrt_5yJUpUXVkcH9C83SzkAw80DlrY8s6zUfwrq-hyFp5kkw-Osgs03YaQHaEyfZqief9WUDLsobMrLp6vVSJUyxZaQZH2yI1LjPjRUalguGiuEzWme6DE5amiK4O9x3HzBuERoOv33ItmWtyjEvdfQ8/s289/logo.png'">
+        <img class="modal-logo" src="logo.png" alt="IDÉAL Logo" onerror="this.onerror=null;this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikD3AN1fU02SBUFlP5W9W3ayYXdydgYOCW0MRBx6n1-St_mltdyk5e6ck_x4XmS_BIeXwc5G_PQewiDVEeJVYsiFiXqy7xgFfcLaPchHgGowQoPuhnkAZ3rE7HGIDw6J6-yiEWc7SCyUImlAThtNGuQw1X5JS5f7eckmUJb76Y1yoxsAjvqr1qH9Co6Do/s796/hero.PNG'">
         <div><p class="modal-label">Legal</p><h2 class="modal-title">Terms &amp; Conditions</h2></div>
       </div>
       <button class="modal-close" onclick="closeModal('modal-terms')">✕</button>
@@ -967,7 +1022,7 @@
   <div class="modal-box" role="dialog" aria-modal="true">
     <div class="modal-header">
       <div class="modal-header-left">
-        <img class="modal-logo" src="logo.png" alt="IDÉAL Logo" onerror="this.onerror=null;this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjX_lLepJUw20SndTuvPLZKe13g6rEiLZvDOmCBrt_5yJUpUXVkcH9C83SzkAw80DlrY8s6zUfwrq-hyFp5kkw-Osgs03YaQHaEyfZqief9WUDLsobMrLp6vVSJUyxZaQZH2yI1LjPjRUalguGiuEzWme6DE5amiK4O9x3HzBuERoOv33ItmWtyjEvdfQ8/s289/logo.png'">
+        <img class="modal-logo" src="logo.png" alt="IDÉAL Logo" onerror="this.onerror=null;this.src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikD3AN1fU02SBUFlP5W9W3ayYXdydgYOCW0MRBx6n1-St_mltdyk5e6ck_x4XmS_BIeXwc5G_PQewiDVEeJVYsiFiXqy7xgFfcLaPchHgGowQoPuhnkAZ3rE7HGIDw6J6-yiEWc7SCyUImlAThtNGuQw1X5JS5f7eckmUJb76Y1yoxsAjvqr1qH9Co6Do/s796/hero.PNG'">
         <div><p class="modal-label">Legal</p><h2 class="modal-title">Limitation of Liability</h2></div>
       </div>
       <button class="modal-close" onclick="closeModal('modal-liability')">✕</button>
@@ -992,7 +1047,100 @@
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/919482110420" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">💬</a>
 
+
+<!-- BRAND MODAL -->
+<div class="modal-overlay" id="brand-modal" onclick="if(event.target===this)closeBrandModal()">
+  <div class="modal-box" style="max-width:680px;">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <img class="modal-logo" id="bm-logo" src="" alt="" onerror="this.style.display='none'" />
+        <div class="modal-title-block">
+          <p class="modal-label">Authorised Brand</p>
+          <h2 class="modal-title" id="bm-title"></h2>
+        </div>
+      </div>
+      <button class="modal-close" onclick="closeBrandModal()">&#x2715;</button>
+    </div>
+    <div class="modal-body" style="overflow-y:auto;flex:1;">
+      <img id="bm-img" src="" alt="" loading="lazy" class="bm-product-img" />
+      <div class="modal-body-text">
+        <p id="bm-desc"></p>
+      </div>
+    </div>
+    <div class="modal-footer-bar" style="display:flex;justify-content:space-between;align-items:center;padding:16px 28px;border-top:1px solid rgba(122,28,62,0.1);background:var(--white);flex-shrink:0;">
+      <a id="bm-wa" href="#" target="_blank" class="modal-wa-link">&#x1F4AC; WhatsApp Enquiry</a>
+      <button onclick="closeBrandModal()" style="background:var(--burgundy);color:#fff;border:none;padding:10px 24px;border-radius:2px;font-family:'Jost',sans-serif;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;cursor:pointer;">Close</button>
+    </div>
+  </div>
+</div>
+
 <script>
+
+  // ── HERO SLIDER ──
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  let currentSlide = 0, sliderTimer;
+  function goSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    clearInterval(sliderTimer);
+    sliderTimer = setInterval(() => goSlide(currentSlide + 1), 5000);
+  }
+  if (slides.length) sliderTimer = setInterval(() => goSlide(currentSlide + 1), 5000);
+
+  // ── LIGHTBOX ──
+  const galleryImgs = [
+    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZWNFF3EHBjjkdS5JmQTSDp8VfV7eCdI5Ah4TDN-ju-kIiVaqSPoJmbky-WUmpMSO2nMYajgUxXMHkkIrficJmP5hFVEiBx6y_nWBkZVHN1AwzZQW2fZVj6SMI_9fzyBHG7QKIwzgdpP2u23acn_KgDI1T4z_HYlZz36JaOvaR9B3RQOLE1-Qwwgx-vOk/s8160/IMG_20260523_183525.jpg',
+    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUcieKWK-reTZmS_KdEG6kmEkAUGkAOL4lwS7dFUcpwxD27j1ZqXJnuq5Bu8Von4SJK5IBhbqrZ0_c2L2VNYhYsb5BW8nj5X5WbazJT0NYm8amx9g8JUfQ9h0q8PpI0vGrIaGVbpIhMcih4EBMbFUrkp73B_2D5LlORCozJKlovgJNzfDYSKrrwXfYXBQ/s4960/IMG_20260523_183138.jpg',
+    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidsgDLo-4fqggSd6Her2uXhSLqfxwWlXHW7SebzBBdFS5TI4TL4NYSbT__rrA42tSBMzVcYi4mDUu4Wvfpn7UpwX1eg8JFTU7Jfh6d3L1vwSQWkGdcMMWDZbQu33CZMRU-6bp0A8fS4SIvDi6T9CqtoxWe_IBZ_q-45R77NRGDGtdQpSiNJNwECYH9Dic/s8160/IMG_20260523_182451.jpg',
+    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0Cm3KVqZNrPfLhuqAAeuCNQNFis-86Lmz_vda_NCwTTDTtHV3LgV41p4ZSw0OLVn9Co_pMxH2ie_x8kBuUykuSZ_G4vR_uDzu28UW0xxAqWWLenZRLoW5Dg5p-S-3em2rJShnH1LSvJiXfa9HOErD43_iJJa8kHw4pVZta-NNQ8OQ-255u7xfPrxfND8/s4080/be05314c-fb4d-46de-9dd0-920a86e73942~1.jpg',
+    'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOwZTwrO9GJmocFLOapq_3xa53rSFC0E06B0WXbqsIjq3n2GwmySfOZg8a1-BAtoqNgeam39ja2C5W0MsNBcyWVVOfpHdxZDEWBEtOHaHNiJNQ24MQR_jKGDJ6DRAVmSJB87zPFy_crP9EcaaY7G_bjzcX9WUpBmsHprla13f51a6c2nxcurN4rhTLsSM/s4080/a15a58b4-33db-4152-9ebd-71fc2883cca2~1.jpg'
+  ];
+  let lbCurrent = 0;
+  function openLightbox(i) {
+    lbCurrent = i;
+    document.getElementById('lb-img').src = galleryImgs[i];
+    document.getElementById('lb-counter').textContent = (i+1) + ' / ' + galleryImgs.length;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function lbNav(dir) {
+    lbCurrent = (lbCurrent + dir + galleryImgs.length) % galleryImgs.length;
+    document.getElementById('lb-img').src = galleryImgs[lbCurrent];
+    document.getElementById('lb-counter').textContent = (lbCurrent+1) + ' / ' + galleryImgs.length;
+  }
+
+  // ── BRAND MODALS ──
+  const brands = {
+    widex:{title:'Widex',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhg_TlmHOzg_4JLbRWnIUG5bxcPPbMjxeKqXxjC68Yn_vknIBtRn0SxYyDhcO6am5aK0Xb5JxmdvPnv6xhna2qyFUWSoONx7N9ZgsmPWSEWGzt1HuEmzG1MzwwP-pvEx1aTGF4TA049SXKSDDM7j5tYG1tEmwpFFCp_Nxg5UFNZxJTOPjgm4XA7mIjCpWI/s320/Widex.PNG',img:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLV_c0Ra2k4nMgEHlsZ2qJSYIP2MbLM1tJAhhIxh_o5K5IRPT84y4M7wsRggRlsKwuL69u5yAPEJwt-56fHcf0_CCMRgDDkEUfxETeR8PLAXsTSGDpKaOufd3HEzy_z9QIBKyPoxsgE-HFISFpCfDiq0ixPf5MrnRnNVjUFvXftdXr_mwVUlp2B5eTbpQ/s1024/widex11.jpg',desc:'Widex believes your hearing is best served by natural sound. Their hearing aids are engineered to process sound as close to the natural hearing system as possible — so natural, you might forget you even have hearing loss.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Widex%20hearing%20aids.'},
+    phonak:{title:'Phonak',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRnEWpQad5JGMQyyVrKyJzZ6RDRahp1CQwHRwm_fwXzvmaDoGrKnBCAC1T7DZP8Czvedi62tE2nhaIBSfaVEOMsyLHAdr9rinPpnFToKpID6pME7JpeTDCk04BQX4dPoWZz9e9la3CXCkYNQ-vAdwFd20BVzas1wUSjomCnf4w1oSt9UuHA9w06Q4FGH8/s320/Phonak.PNG',img:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJcjkQP4b9VIc_Nkdg-tn7lWoDtXk13tPxzdMO5AtAyXXXBOU3_EQZceQdRfHbUTntbPJors3ExdTrdt9FuVOQgXBiW2E3Qv4QV9yT8NLujX06gRWPNHY3kUF8fGW1RFoJnltCreEouR1zfG-QQDjU0WYQpktJCveMOK7YEJyfPrXv1rKaOS3oEdmJ5og/s300/phonak1.jpg',desc:'Phonak is a global leader in hearing solutions. Their innovative technology, including the Roger wireless system and AutoSense OS, delivers exceptional speech understanding even in the most challenging listening environments.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Phonak%20hearing%20aids.'},
+    signia:{title:'Signia',logo:'',img:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnZTz6rp9fA2et97GnW5A2To-NKvjlpqvlyGxN8xYelMGKsrfgAmVgpjRESG8GIP_pGIHNV7cpO3QGv0yQ76wMgGuQRjkImlFv_wdjayXj-63GVP-_HhBlV5rNcnUK71UMTvvFZ84pb8P10q4iruAtv1ur5YEoxd3KHt4CpNN8YH2KDDcVI-Z52Fm92rU/s1260/IMG-20260605-WA0060.jpg',desc:'Signia combines cutting-edge hearing technology with elegant design. Known for Own Voice Processing (OVP) technology, Signia hearing aids make your own voice sound completely natural while delivering outstanding sound quality.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Signia%20hearing%20aids.'},
+    resound:{title:'GN ReSound',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgg7rZK1Ma-Aw6QgxJtI_TZx8JsApSvltCzCXVLoyebQ2ymziywxzOzPeXzjODDdq4vPpcGAIhQ4Uk12qM2RI4-hZlk3GeOd6H6ZKnZnDBJNn-FUNWGNEv3u6T6ASTlsNOIeEcwzKb0ej-9lo4K7tBVKTOmzZLRa5pHgYLpjmn24jq48wWavVcf1bmpqyA/s320/GN-Resound.PNG',img:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3ICeAK72oBXLABl6u1PksFwQXtouJVwo7InNu8wAtLKBVKrA2WWi3iR5LBfTzsqtBfNtfZ-aHCdTlQvX36o-xjyh20bsdjqWi1EX3tf74HuC13MbIhCKiOhlCaVHFzjKd-8-nW5_MAL1moA7dup8o3KjcxOdgc68t7c556tzM-6HsHxq8oZKUUZ1whPw/s500/resound.jpg',desc:'GN ReSound pioneers smart hearing solutions with direct Bluetooth streaming to smartphones and TVs. Their AI-driven sound processing and industry-leading rechargeable technology offer unmatched connectivity and listening comfort.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20GN%20ReSound%20hearing%20aids.'},
+    unitron:{title:'Unitron',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr1VEgq770-9toAKxeF4TOM7g_vAezge9R6jtaqgnE1zAZ2GppZSejxLDZrA-AiU9lpgGtOenHLcxHho2xNQ3G5HlShTHDe1XDPdQGUFCFnFdWiWfu9z3NXLtCud004si4UnLmtBUAseuVCo4C96vDoLeNvy5ygt_ByHqVoJAWGAufODmn2jI-8gB9dtk/s320/Unitron.PNG',img:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5zf2YJH5cR5Hs0kzbs3MlJL9vwIKp0qBni5a03wgKkTyVMh39XuGTYfdwE1D_r202wmZzl5eDA8AcJU6mgCD5z0RZPGhjNgBRqCADnpYgzDqZvzKkJKsyIYJ4siMhXmN7KRV1vLq22VRxaAiL4gEFqHhBLppY5oGT-npvHAs4IHwMI73RqyEUiRQFzhY/s1200/unitron1.jpg',desc:'Unitron hearing aids are built on a philosophy of putting people first. Their Log It All data-logging and Flex:trial programme allow patients to experience hearing aids in real life before making a commitment.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Unitron%20hearing%20aids.'},
+    cochlear:{title:'Cochlear™',logo:'',img:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1X9insP19qnCWuARFN18RLxxpM7EyMrvRYDfc54Vcg9APm41ue5vBLkz2vxcpJL_PlZ0PfyqroVQb735YAew-kmwn9j69Mh74pssmNW2yVHIb1jDHuKIHcLQU8XkuLhpeP47buzMCwP1-qqyx8xzj7Oikrylml5tCou7r1AudNqkszMTRCOZVNAMgBcI/s667/IMG-20260529-WA0050.jpg',desc:'Cochlear™ is the global leader in implantable hearing devices. IDÉAL is Mangalore's exclusive provider of Cochlear™ Implant Mapping — the only clinic in the district offering this critical service for CI recipients.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Cochlear%20Implant%20Mapping.'}
+  };
+  function openBrandModal(key) {
+    const b = brands[key];
+    document.getElementById('bm-title').textContent = b.title;
+    document.getElementById('bm-logo').src = b.logo;
+    document.getElementById('bm-img').src = b.img;
+    document.getElementById('bm-desc').textContent = b.desc;
+    document.getElementById('bm-wa').href = 'https://wa.me/919482110420?text=' + b.wa;
+    document.getElementById('brand-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeBrandModal() {
+    document.getElementById('brand-modal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
   // Sticky nav
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
@@ -1030,7 +1178,7 @@
   function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
   function closeModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = ''; }
   function handleOverlayClick(e, id) { if (e.target === document.getElementById(id)) closeModal(id); }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') ['modal-privacy','modal-terms','modal-liability'].forEach(closeModal); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { ['modal-privacy','modal-terms','modal-liability'].forEach(closeModal); closeBrandModal(); closeLightbox(); } });
 </script>
 </body>
 </html>
