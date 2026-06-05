@@ -519,63 +519,47 @@
   </ul>
 </div>
 
-<!-- HERO -->
+<!-- HERO VIDEO — full width at top -->
 <section id="hero">
-  <div class="hero-slides" id="heroSlides">
-    <div class="hero-slide active">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEikD3AN1fU02SBUFlP5W9W3ayYXdydgYOCW0MRBx6n1-St_mltdyk5e6ck_x4XmS_BIeXwc5G_PQewiDVEeJVYsiFiXqy7xgFfcLaPchHgGowQoPuhnkAZ3rE7HGIDw6J6-yiEWc7SCyUImlAThtNGuQw1X5JS5f7eckmUJb76Y1yoxsAjvqr1qH9Co6Do/s796/hero.PNG" alt="IDÉAL Speech and Hearing Solutions" />
-    </div>
-    <div class="hero-slide">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5-RVVa6qpI6Rv4WL7_AVYMeftebBcgdV7wV89CWmjMH2Jq2ZM0xolv4FQsbXVWzlO-iybtsEvtP0v2p6jsP99BgTZ4OIuWuMWgL2N9UHBTy1ab6lJnTsQxIodvccMPC9cbLWtyMETOvU0i2-mLEanX3WA-JIYYyuuXHJ0mcte4u5Ealy7_f2RYst0VnE/s2560/banner.jpg" alt="IDÉAL Clinic Banner" />
-    </div>
-    <div class="hero-slide">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZWNFF3EHBjjkdS5JmQTSDp8VfV7eCdI5Ah4TDN-ju-kIiVaqSPoJmbky-WUmpMSO2nMYajgUxXMHkkIrficJmP5hFVEiBx6y_nWBkZVHN1AwzZQW2fZVj6SMI_9fzyBHG7QKIwzgdpP2u23acn_KgDI1T4z_HYlZz36JaOvaR9B3RQOLE1-Qwwgx-vOk/s8160/IMG_20260523_183525.jpg" alt="IDÉAL Clinic" />
-    </div>
-  </div>
-  <div class="hero-bg-overlay"></div>
-  <div class="hero-bg-overlay2"></div>
 
-  <div class="hero-content">
-    <div class="hero-badge">Mangalore's Premier Hearing Care Centre</div>
-    <h1 class="hero-title">
-      <em>IDÉAL</em>
-      <strong>Speech &amp;<br>Hearing Solutions</strong>
-    </h1>
-    <p class="hero-tagline">Aiming Perfection — Because Every Word and Sound Matters</p>
-    <p class="hero-desc">Where Science Meets Compassionate Care. Mangalore's leading audiology clinic — advanced diagnostics, top hearing aid brands, and the city's only Cochlear™ Implant Mapping centre.</p>
-    <div class="hero-actions">
-      <a href="https://idealspeechandhearing.setmore.com/idealspeechandhearing" target="_blank" class="hero-btn-primary">Book a Free Consultation</a>
-      <a href="#services" class="hero-btn-outline">Explore Services</a>
+  <!-- ① Full-width autoplay video — the first thing visitors see -->
+  <div class="hero-video-wrap">
+    <video
+      id="heroVideo"
+      autoplay muted loop playsinline
+      poster="logo.png"
+      style="width:100%;display:block;max-height:100vh;object-fit:cover;">
+      <source src="hero.mp4" type="video/mp4" />
+    </video>
+    <!-- subtle bottom fade into content -->
+    <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--black));pointer-events:none;"></div>
+  </div>
+
+  <!-- ② Text content block below the video -->
+  <div class="hero-text-block">
+    <div class="hero-content" style="animation:heroFadeUp 1s 0.2s ease both;">
+      <div class="hero-badge">Mangalore's Premier Hearing Care Centre</div>
+      <h1 class="hero-title">
+        <em>IDÉAL</em>
+        <strong>Speech &amp;<br>Hearing Solutions</strong>
+      </h1>
+      <p class="hero-tagline">Aiming Perfection — Because Every Word and Sound Matters</p>
+      <p class="hero-desc">Where Science Meets Compassionate Care. Mangalore's leading audiology clinic — advanced diagnostics, top hearing aid brands, and the city's only Cochlear™ Implant Mapping centre.</p>
+      <div class="hero-actions">
+        <a href="https://idealspeechandhearing.setmore.com/idealspeechandhearing" target="_blank" class="hero-btn-primary">Book a Free Consultation</a>
+        <a href="#services" class="hero-btn-outline">Explore Services</a>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-num">5</span>
-        <span class="hero-stat-label">Authorised Brands</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">Only</span>
-        <span class="hero-stat-label">Cochlear™ Mapping Centre</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">City's 1st</span>
-        <span class="hero-stat-label">Complete Diagnostic Centre</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">🏠</span>
-        <span class="hero-stat-label">Home Care Available</span>
-      </div>
+    <!-- Stats bar across full width -->
+    <div class="hero-stats-bar">
+      <div class="hero-stat-b"><span class="hero-stat-num">5</span><span class="hero-stat-label">Authorised Brands</span></div>
+      <div class="hero-stat-b"><span class="hero-stat-num">Only</span><span class="hero-stat-label">Cochlear™ Mapping Clinic</span></div>
+      <div class="hero-stat-b"><span class="hero-stat-num">City's 1st</span><span class="hero-stat-label">Complete Diagnostic Centre</span></div>
+      <div class="hero-stat-b"><span class="hero-stat-num">2</span><span class="hero-stat-label">Clinic Locations</span></div>
+      <div class="hero-stat-b"><span class="hero-stat-num">🏠</span><span class="hero-stat-label">Home Care Available</span></div>
     </div>
   </div>
 
-  <div class="hero-dots" id="heroDots">
-    <button class="hero-dot active" onclick="goSlide(0)"></button>
-    <button class="hero-dot" onclick="goSlide(1)"></button>
-    <button class="hero-dot" onclick="goSlide(2)"></button>
-  </div>
-  <div class="hero-scroll-hint">
-    <div class="hero-scroll-line"></div>
-    <span>Scroll</span>
-  </div>
 </section>
 
 <!-- TRUST BAR -->
@@ -638,11 +622,14 @@
     </div>
     <div class="cochlear-visual" data-reveal>
       <div class="cochlear-img-wrap">
-        <div style="background:#111;border-radius:2px;padding:32px;text-align:center;color:rgba(255,255,255,0.5);">
-          <div style="font-size:3rem;margin-bottom:12px;">🎬</div>
-          <p style="font-size:0.9rem;line-height:1.6;">Our Cochlear™ Implant Mapping video is hosted on Blogger.<br>
-          <a href="https://idealspeechandhearingsolutions.blogspot.com" target="_blank" style="color:#c4748e;">Watch on our Blogger channel →</a></p>
-        </div>
+        <video class="cochlear-video-player" controls poster="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEioECw0vtmC9XIqW8RJj7ayzSZ4NkVOtiFMhJvMdTcMBYdAryb9P1f4zsD5b5XfNgOQxm58tjxZQGdKgqUnhnqf59x8krdwWcLKbjGUxHwuzZcNoNb4cdy5OOYaO0gcnTuY-5DOdUWbnC0osi5t3gMQW4LyXmg98jZeFEBpSmldNUjFaDFhopzX7FYzz88/s736/mapping.jpg">
+          <source src="vid4.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <video class="cochlear-video-player" controls style="margin-top:10px;">
+          <source src="mangalore_only.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
       <div class="cochlear-exclusive">Only in Mangalore</div>
     </div>
@@ -856,6 +843,14 @@
     </div>
     <div class="gallery-item" onclick="openLightbox(4)">
       <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOwZTwrO9GJmocFLOapq_3xa53rSFC0E06B0WXbqsIjq3n2GwmySfOZg8a1-BAtoqNgeam39ja2C5W0MsNBcyWVVOfpHdxZDEWBEtOHaHNiJNQ24MQR_jKGDJ6DRAVmSJB87zPFy_crP9EcaaY7G_bjzcX9WUpBmsHprla13f51a6c2nxcurN4rhTLsSM/s320/a15a58b4-33db-4152-9ebd-71fc2883cca2~1.jpg" alt="Products" loading="lazy" />
+    </div>
+  </div>
+
+  <!-- Clinic Video -->
+  <div style="margin-top:8px;">
+    <div class="gallery-video-item" id="galleryVidItem" onclick="playGalleryVideo(this)">
+      <video id="galleryVid" src="VID-20260605-WA0063.mp4" preload="metadata" style="width:100%;max-height:400px;object-fit:cover;display:block;background:#000;"></video>
+      <div class="gallery-video-play"><span>&#9654;</span></div>
     </div>
   </div>
 </section>
@@ -1076,20 +1071,13 @@
 
 <script>
 
-  // ── HERO SLIDER ──
-  const slides = document.querySelectorAll('.hero-slide');
-  const dots = document.querySelectorAll('.hero-dot');
-  let currentSlide = 0, sliderTimer;
-  function goSlide(n) {
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    currentSlide = (n + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-    clearInterval(sliderTimer);
-    sliderTimer = setInterval(() => goSlide(currentSlide + 1), 5000);
+  // ── GALLERY VIDEO PLAY ──
+  function playGalleryVideo(el) {
+    const vid = el.querySelector('video');
+    el.classList.add('playing');
+    vid.controls = true;
+    vid.play();
   }
-  if (slides.length) sliderTimer = setInterval(() => goSlide(currentSlide + 1), 5000);
 
   // ── LIGHTBOX ──
   const galleryImgs = [
