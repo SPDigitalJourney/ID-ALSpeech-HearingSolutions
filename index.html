@@ -47,17 +47,17 @@ nav.sc{box-shadow:0 2px 24px rgba(122,28,62,.1);}
 #mm a{text-decoration:none;color:var(--blk);font-weight:500;letter-spacing:.08em;text-transform:uppercase;font-size:.85rem;}
 
 /* HERO */
-#hero{margin-top:68px;position:relative;background:var(--blk);}
+#hero{margin-top:68px;position:relative;background:var(--burg);}
 #hero video{width:100%;display:block;max-height:92vh;object-fit:cover;}
-.hero-fade{position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(to bottom,transparent,var(--blk));pointer-events:none;}
-.hero-text{background:var(--blk);padding:52px 6vw 0;}
-.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(196,116,142,.15);border:1px solid rgba(196,116,142,.35);padding:5px 14px;border-radius:100px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#e8a0b8;font-weight:500;margin-bottom:22px;}
-.hbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:#e8a0b8;display:block;}
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(to bottom,transparent,var(--burg));pointer-events:none;}
+.hero-text{background:var(--burg);padding:52px 6vw 0;}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);padding:5px 14px;border-radius:100px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#fff;font-weight:500;margin-bottom:22px;}
+.hbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:#fff;display:block;}
 .htitle{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5.5vw,5rem);font-weight:300;line-height:1.05;color:#fff;margin-bottom:14px;}
 .htitle em{font-style:italic;color:#e8a0b8;}
 .htitle strong{font-weight:600;display:block;}
-.htagline{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:18px;}
-.hdesc{font-size:1rem;line-height:1.8;color:rgba(255,255,255,.7);max-width:600px;margin-bottom:36px;font-weight:300;}
+.htagline{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:18px;}
+.hdesc{font-size:1rem;line-height:1.8;color:rgba(255,255,255,.88);max-width:600px;margin-bottom:36px;font-weight:300;}
 .hbtns{display:flex;gap:14px;flex-wrap:wrap;padding-bottom:52px;}
 .bp{background:var(--burg);color:#fff;padding:14px 32px;border-radius:2px;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:all .25s;display:inline-block;border:1.5px solid var(--burg);}
 .bp:hover{background:var(--burg-l);transform:translateY(-2px);box-shadow:0 8px 24px rgba(122,28,62,.4);}
@@ -95,14 +95,14 @@ section.alt{background:var(--gl);}
 .aft strong{display:block;color:var(--blk);font-weight:500;font-size:.87rem;margin-bottom:2px;}
 
 /* COCHLEAR */
-#cochlear{background:var(--blk);padding:88px 6vw;}
+#cochlear{background:var(--burg-d);padding:88px 6vw;}
 .ci{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
 .cbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(122,28,62,.4);border:1px solid rgba(196,116,142,.4);padding:5px 14px;border-radius:100px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#c4748e;font-weight:500;margin-bottom:20px;}
 .ctitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,2.8vw,2.6rem);font-weight:300;color:#fff;line-height:1.15;margin-bottom:18px;}
 .ctitle em{color:#c4748e;font-style:italic;}
-.cbody{font-size:.93rem;line-height:1.85;color:rgba(255,255,255,.65);margin-bottom:14px;}
+.cbody{font-size:.93rem;line-height:1.85;color:rgba(255,255,255,.88);margin-bottom:14px;}
 .cpts{list-style:none;margin:20px 0 28px;display:flex;flex-direction:column;gap:10px;}
-.cpts li{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:rgba(255,255,255,.72);line-height:1.6;}
+.cpts li{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:rgba(255,255,255,.9);line-height:1.6;}
 .cpts li::before{content:'◆';color:#c4748e;flex-shrink:0;font-size:.55rem;margin-top:5px;}
 .cvids{display:flex;flex-direction:column;gap:12px;position:relative;}
 .cvids video{width:100%;border-radius:2px;display:block;background:#000;}
@@ -133,20 +133,20 @@ section.alt{background:var(--gl);}
 .dd{font-size:.83rem;line-height:1.7;color:var(--gt);}
 
 /* BRANDS */
-#brands{background:var(--blk);text-align:center;}
-#brands .slbl{color:var(--gm);}
-#brands .stitle{color:var(--white);}
-#brands .stitle em{color:#c4748e;}
-#brands .sdesc{color:rgba(255,255,255,.5);margin:0 auto 44px;}
-.brg{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
-.bc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:24px 18px;text-align:center;transition:all .3s;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer;}
-.bc:hover{background:rgba(122,28,62,.22);border-color:rgba(122,28,62,.45);transform:translateY(-3px);}
-.blb{background:#fff;border-radius:4px;padding:12px 20px;display:flex;align-items:center;justify-content:center;min-height:64px;width:100%;}
-.blb img{height:40px;width:auto;max-width:140px;object-fit:contain;display:block;}
-.blb span{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:#003087;}
-.bn{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:rgba(255,255,255,.85);}
-.bdesc{font-size:.8rem;line-height:1.6;color:rgba(255,255,255,.42);flex:1;}
-.btag{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border:1px solid rgba(196,116,142,.4);color:#c4748e;border-radius:100px;}
+#brands{background:var(--cream);text-align:center;}
+#brands .slbl{color:var(--burg);}
+#brands .stitle{color:var(--blk);}
+#brands .stitle em{color:var(--burg);}
+#brands .sdesc{color:var(--gt);margin:0 auto 44px;}
+.brg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.bc{background:var(--white);border:1px solid rgba(122,28,62,.12);padding:28px 20px;text-align:center;transition:all .3s;display:flex;flex-direction:column;align-items:center;gap:14px;cursor:pointer;border-radius:4px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.bc:hover{border-color:var(--burg);transform:translateY(-5px);box-shadow:0 16px 40px rgba(122,28,62,.15);}
+.blb{background:#fff;border:1px solid rgba(122,28,62,.08);border-radius:4px;padding:20px 28px;display:flex;align-items:center;justify-content:center;min-height:96px;width:100%;overflow:hidden;}
+.blb img{width:100%;max-width:200px;height:auto;max-height:64px;object-fit:contain;display:block;}
+.blb span{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#003087;letter-spacing:.03em;}
+.bn{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--blk);}
+.bdesc{font-size:.82rem;line-height:1.65;color:var(--gt);flex:1;}
+.btag{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border:1px solid rgba(122,28,62,.25);color:var(--burg);border-radius:100px;}
 .bwa{display:inline-flex;align-items:center;gap:5px;background:#25D366;color:#fff;text-decoration:none;padding:9px 16px;border-radius:2px;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:all .2s;margin-top:auto;width:100%;justify-content:center;}
 .bwa:hover{background:#1da851;transform:translateY(-2px);}
 
@@ -205,18 +205,18 @@ section.alt{background:var(--gl);}
 .svgrid iframe{width:100%;height:150px;border:0;display:block;}
 
 /* SOCIAL BAR */
-.soc{background:var(--blk);padding:24px 6vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+.soc{background:var(--burg);padding:24px 6vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
 .socl{display:flex;gap:10px;}
-.socl a{width:38px;height:38px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:2px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.6);transition:all .2s;}
-.socl a:hover{background:var(--burg);border-color:var(--burg);color:#fff;}
+.socl a{width:38px;height:38px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:2px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:.82rem;font-weight:600;color:#fff;transition:all .2s;}
+.socl a:hover{background:#fff;border-color:#fff;color:var(--burg);}
 .socbk{background:var(--burg);color:#fff;padding:11px 24px;border-radius:2px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;font-weight:500;}
 
 /* FOOTER */
-footer{background:var(--blk);border-top:1px solid rgba(255,255,255,.06);padding:36px 6vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
-footer p{font-size:.75rem;color:rgba(255,255,255,.28);}
+footer{background:var(--burg-d);border-top:1px solid rgba(255,255,255,.1);padding:36px 6vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+footer p{font-size:.75rem;color:rgba(255,255,255,.65);}
 .fl{display:flex;gap:20px;flex-wrap:wrap;}
-.fl a{font-size:.75rem;color:rgba(255,255,255,.28);text-decoration:none;transition:color .2s;}
-.fl a:hover{color:rgba(255,255,255,.6);}
+.fl a{font-size:.75rem;color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s;}
+.fl a:hover{color:#fff;}
 
 /* WA FLOAT */
 .waf{position:fixed;bottom:26px;right:26px;z-index:999;background:#25D366;color:#fff;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.5rem;box-shadow:0 4px 18px rgba(37,211,102,.4);animation:wpulse 2.5s infinite;}
@@ -470,7 +470,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.28);}
   <div class="brg">
 
     <div class="bc" data-r onclick="openBM('widex')">
-      <div class="blb"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhg_TlmHOzg_4JLbRWnIUG5bxcPPbMjxeKqXxjC68Yn_vknIBtRn0SxYyDhcO6am5aK0Xb5JxmdvPnv6xhna2qyFUWSoONx7N9ZgsmPWSEWGzt1HuEmzG1MzwwP-pvEx1aTGF4TA049SXKSDDM7j5tYG1tEmwpFFCp_Nxg5UFNZxJTOPjgm4XA7mIjCpWI/s320/Widex.PNG" alt="Widex" loading="lazy"/></div>
+      <div class="blb"><img src="widex11.jpg" alt="Widex" loading="lazy"/></div>
       <div class="bn">Widex</div>
       <p class="bdesc">Natural sound engineering — hearing aids so natural, you might forget you have hearing loss.</p>
       <span class="btag">⭐ Leading Authorised Dealer in Mangalore</span>
@@ -478,7 +478,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.28);}
     </div>
 
     <div class="bc" data-r onclick="openBM('phonak')">
-      <div class="blb"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRnEWpQad5JGMQyyVrKyJzZ6RDRahp1CQwHRwm_fwXzvmaDoGrKnBCAC1T7DZP8Czvedi62tE2nhaIBSfaVEOMsyLHAdr9rinPpnFToKpID6pME7JpeTDCk04BQX4dPoWZz9e9la3CXCkYNQ-vAdwFd20BVzas1wUSjomCnf4w1oSt9UuHA9w06Q4FGH8/s320/Phonak.PNG" alt="Phonak" loading="lazy"/></div>
+      <div class="blb"><img src="phonak1.jpg" alt="Phonak" loading="lazy"/></div>
       <div class="bn">Phonak</div>
       <p class="bdesc">Global leader with Roger wireless technology and AutoSense OS for outstanding speech understanding.</p>
       <span class="btag">Authorised Dealer</span>
@@ -486,7 +486,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.28);}
     </div>
 
     <div class="bc" data-r onclick="openBM('signia')">
-      <div class="blb"><span>Signia</span></div>
+      <div class="blb" style="background:#000;"><img src="signia.jpg" alt="Signia" loading="lazy"/></div>
       <div class="bn">Signia</div>
       <p class="bdesc">Own Voice Processing technology — your voice sounds completely natural with outstanding clarity.</p>
       <span class="btag">Authorised Dealer</span>
@@ -494,7 +494,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.28);}
     </div>
 
     <div class="bc" data-r onclick="openBM('resound')">
-      <div class="blb"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgg7rZK1Ma-Aw6QgxJtI_TZx8JsApSvltCzCXVLoyebQ2ymziywxzOzPeXzjODDdq4vPpcGAIhQ4Uk12qM2RI4-hZlk3GeOd6H6ZKnZnDBJNn-FUNWGNEv3u6T6ASTlsNOIeEcwzKb0ej-9lo4K7tBVKTOmzZLRa5pHgYLpjmn24jq48wWavVcf1bmpqyA/s320/GN-Resound.PNG" alt="ReSound" loading="lazy"/></div>
+      <div class="blb"><img src="resound.jpg" alt="GN ReSound" loading="lazy"/></div>
       <div class="bn">GN ReSound</div>
       <p class="bdesc">Smart hearing with direct Bluetooth streaming and AI-driven sound processing for unmatched connectivity.</p>
       <span class="btag">Authorised Dealer</span>
@@ -502,52 +502,68 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.28);}
     </div>
 
     <div class="bc" data-r onclick="openBM('unitron')">
-      <div class="blb"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr1VEgq770-9toAKxeF4TOM7g_vAezge9R6jtaqgnE1zAZ2GppZSejxLDZrA-AiU9lpgGtOenHLcxHho2xNQ3G5HlShTHDe1XDPdQGUFCFnFdWiWfu9z3NXLtCud004si4UnLmtBUAseuVCo4C96vDoLeNvy5ygt_ByHqVoJAWGAufODmn2jI-8gB9dtk/s320/Unitron.PNG" alt="Unitron" loading="lazy"/></div>
+      <div class="blb"><img src="unitron1.jpg" alt="Unitron" loading="lazy"/></div>
       <div class="bn">Unitron</div>
       <p class="bdesc">People-first philosophy with Flex:trial — experience hearing aids in real life before committing.</p>
       <span class="btag">Authorised Dealer — Sonova Group</span>
       <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Unitron%20hearing%20aids." target="_blank" class="bwa" onclick="event.stopPropagation()">💬 WhatsApp Enquiry</a>
     </div>
 
-    <div class="bc" data-r onclick="openBM('bestsound')" style="border-color:rgba(255,255,255,.15);">
-      <div class="blb" style="background:#1a0d10;"><span style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;">BestSound IDÉAL</span></div>
+    <div class="bc" data-r onclick="openBM('bestsound')">
+      <div class="blb" style="background:#000;"><img src="bestsound12.jpg" alt="BestSound" loading="lazy"/></div>
       <div class="bn">BestSound</div>
       <p class="bdesc">Our second clinic at Urwa, Mangalore — same expert hearing care and premium brands, conveniently located.</p>
       <span class="btag">Branch — Urwa, Mangalore</span>
       <a href="https://wa.me/919482888403?text=Hello%20BestSound%20IDÉAL!%20I%27d%20like%20more%20information." target="_blank" class="bwa" onclick="event.stopPropagation()">💬 WhatsApp Enquiry</a>
     </div>
 
-    <div class="bc" data-r onclick="openBM('cochlear')" style="border-color:rgba(196,116,142,.35);background:rgba(122,28,62,.16);grid-column:span 2;">
-      <div class="blb"><span>Cochlear™</span></div>
-      <div class="bn" style="color:#c4748e;">Cochlear™</div>
-      <p class="bdesc">Global leader in implantable hearing devices. IDÉAL is Mangalore's <strong style="color:rgba(255,255,255,.7);">exclusive</strong> provider of Cochlear™ Implant Mapping — the only clinic in the district offering this critical service.</p>
-      <span class="btag" style="border-color:rgba(196,116,142,.55);color:#c4748e;">★ Exclusive Mapping Centre — Mangalore</span>
-      <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Cochlear%20Implant%20Mapping." target="_blank" class="bwa" style="max-width:280px;" onclick="event.stopPropagation()">💬 Book Cochlear™ Mapping</a>
+    <div class="bc" data-r onclick="openBM('cochlear')" style="border-color:var(--burg);background:var(--burg);grid-column:span 2;">
+      <div class="blb" style="background:#000;"><img src="cochlear.jpg" alt="Cochlear" loading="lazy"/></div>
+      <div class="bn" style="color:#fff;">Cochlear™</div>
+      <p class="bdesc" style="color:rgba(255,255,255,.75);">Global leader in implantable hearing devices. IDÉAL is Mangalore's <strong style="color:#fff;">exclusive</strong> provider of Cochlear™ Implant Mapping — the only clinic in the district offering this critical service.</p>
+      <span class="btag" style="border-color:rgba(255,255,255,.4);color:#fff;">★ Exclusive Mapping Centre — Mangalore</span>
+      <a href="https://wa.me/919482110420?text=Hello%20IDÉAL!%20I%27m%20interested%20in%20Cochlear%20Implant%20Mapping." target="_blank" class="bwa" style="background:#fff;color:var(--burg);max-width:280px;" onclick="event.stopPropagation()">💬 Book Cochlear™ Mapping</a>
     </div>
 
   </div>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery">
-  <p class="slbl">Gallery</p>
-  <h2 class="stitle">Our <em>Clinic &amp; Work</em></h2>
-  <div class="gg">
-    <div class="gi" onclick="openLB(0)"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZWNFF3EHBjjkdS5JmQTSDp8VfV7eCdI5Ah4TDN-ju-kIiVaqSPoJmbky-WUmpMSO2nMYajgUxXMHkkIrficJmP5hFVEiBx6y_nWBkZVHN1AwzZQW2fZVj6SMI_9fzyBHG7QKIwzgdpP2u23acn_KgDI1T4z_HYlZz36JaOvaR9B3RQOLE1-Qwwgx-vOk/s320/IMG_20260523_183525.jpg" alt="Clinic" loading="lazy"/></div>
-    <div class="gi" onclick="openLB(1)"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUcieKWK-reTZmS_KdEG6kmEkAUGkAOL4lwS7dFUcpwxD27j1ZqXJnuq5Bu8Von4SJK5IBhbqrZ0_c2L2VNYhYsb5BW8nj5X5WbazJT0NYm8amx9g8JUfQ9h0q8PpI0vGrIaGVbpIhMcih4EBMbFUrkp73B_2D5LlORCozJKlovgJNzfDYSKrrwXfYXBQ/s320/IMG_20260523_183138.jpg" alt="Clinic" loading="lazy"/></div>
-    <div class="gi" onclick="openLB(2)"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidsgDLo-4fqggSd6Her2uXhSLqfxwWlXHW7SebzBBdFS5TI4TL4NYSbT__rrA42tSBMzVcYi4mDUu4Wvfpn7UpwX1eg8JFTU7Jfh6d3L1vwSQWkGdcMMWDZbQu33CZMRU-6bp0A8fS4SIvDi6T9CqtoxWe_IBZ_q-45R77NRGDGtdQpSiNJNwECYH9Dic/s320/IMG_20260523_182451.jpg" alt="Clinic" loading="lazy"/></div>
-    <div class="gi" onclick="openLB(3)"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0Cm3KVqZNrPfLhuqAAeuCNQNFis-86Lmz_vda_NCwTTDTtHV3LgV41p4ZSw0OLVn9Co_pMxH2ie_x8kBuUykuSZ_G4vR_uDzu28UW0xxAqWWLenZRLoW5Dg5p-S-3em2rJShnH1LSvJiXfa9HOErD43_iJJa8kHw4pVZta-NNQ8OQ-255u7xfPrxfND8/s320/be05314c-fb4d-46de-9dd0-920a86e73942~1.jpg" alt="Clinic" loading="lazy"/></div>
-    <div class="gi" onclick="openLB(4)"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOwZTwrO9GJmocFLOapq_3xa53rSFC0E06B0WXbqsIjq3n2GwmySfOZg8a1-BAtoqNgeam39ja2C5W0MsNBcyWVVOfpHdxZDEWBEtOHaHNiJNQ24MQR_jKGDJ6DRAVmSJB87zPFy_crP9EcaaY7G_bjzcX9WUpBmsHprla13f51a6c2nxcurN4rhTLsSM/s320/a15a58b4-33db-4152-9ebd-71fc2883cca2~1.jpg" alt="Clinic" loading="lazy"/></div>
-    <div class="gi" onclick="openLB(5)"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEll-PA2qbmScdiGCwLTQc6sLIyIGTBOrNPFbIV7xhwnuB80qQFhJttpRf5YZ0WSBO3aIe2L3o8wDpyNHOCeWMJwAQDmXm4Ic70XIYYLliZbiB5Qtk4MYMb_EodNMX181EF_WrwOa3X8xWre1yIcCC9lAGhFCVsUMWifjKeuHx5qZeQ9g47Qnho_xLQEM/s320/456bd097-b417-49e4-9759-8715eddebc73~1.jpg" alt="Clinic" loading="lazy"/></div>
-    <div class="gi" onclick="openLB(6)"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYZ5ADe3JQl0T_54xnCyajU1jwC73vyAZhdP4BD80EDJQ8a7AjOIe70x5bRVM2jIXmN9M-tcwJvn4Wjq-z4wz1SJu6QmMI3yOPtZTA5aLcYKYhZTXIhs53_3vAqDm9dC2LmoH3JarNquGOvVOzoQ5lePyEsa_YbEa9uecXdnPlGFKXTLdq3i4RLeon3rU/s320/80edd52a-3d4b-4704-8e3a-dec72e49f2ab~1.jpg" alt="Clinic" loading="lazy"/></div>
-    <div class="gi" onclick="openLB(7)"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgUqltUSABBF8SylEV_VYl28EQFalHNS_3ld1oTn4Ds39cb5pDOqnO7u4wONYIh9NsIXeB854lClkaGfQAdQ2qvuHUoTboVMpQIwbTWlzUgNzRB3XRfRd84i5I16WnhBncCQ6ehq3hoDCxwOJrncOmUGfe4FxauyYGNTXtcqBvnnxVztaGNz9MkxfvpVbM/s320/9a6bf9c0-bfc5-4927-82c9-3f50b66aa93d~1.jpg" alt="Clinic" loading="lazy"/></div>
-    <div class="gi" onclick="openLB(8)"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQ8mkUz_JL8VIJp33JJetx6Z6GxmqWtxPnpxWInP_Thfiiy8TgqrnT6eQILEaSRuoNlwVRsWK4nyWx_f8xkFYzDlaDkQrjBXwuO5SR5_64ow5MwYLE7M9h91K_4D_OQNmnB6I4vQlSNxo6FNyCOwrKrkDehOAMEe25HZt4Cibw3qcOJiBpKqUSqhHymK4/s320/3e758858-1cac-4281-8cfa-30684b20f38a~1.jpg" alt="Clinic" loading="lazy"/></div>
-    <div class="gi" onclick="openLB(9)"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiI7cofM8GGycw_4fmLWQFm7hcENeWUclX6eOrWBiGqTlg3yCtGk_xW7yfFYX_sapNp-G4P453vLDdcP8bkyT91wShvA0uSWI4lOfZ3ISrv6r1iJ8fD6Sdx50XOtfu5XXCfYVpjcgVde_PKd7scgdnRolYcZhADdIynUo4lFx2bPX5Gvm4oC5bAogBaL7I/s320/2a73696e-7a58-4dfe-8488-981704e93b8a~1.jpg" alt="Clinic" loading="lazy"/></div>
+<section id="gallery" style="padding:88px 0;background:var(--gl);">
+  <div style="padding:0 6vw;text-align:center;margin-bottom:44px;">
+    <p class="slbl">Gallery</p>
+    <h2 class="stitle">Our <em>Clinic &amp; Work</em></h2>
+    <p class="sdesc" style="margin:0 auto;">A glimpse inside IDÉAL Speech and Hearing Solutions — our state-of-the-art facilities, equipment and team at work.</p>
   </div>
-  <!-- Gallery Video -->
-  <div class="gvid" id="gv" onclick="playGV()">
-    <video id="gvvid" src="VID-20260605-WA0063.mp4" preload="metadata"></video>
-    <div class="gplay"><span>&#9654;</span></div>
+
+  <!-- MOSAIC SINGLE-WINDOW CAROUSEL -->
+  <div class="mosaic-wrap">
+    <!-- Left: large featured image -->
+    <div class="mosaic-main" id="mosaicMain" onclick="mosaicLB(0)">
+      <img id="mosaicMainImg" src="" alt="Clinic" loading="lazy"/>
+      <div class="mosaic-overlay"><span>&#9654; View</span></div>
+    </div>
+    <!-- Right: 2x2 grid of thumbnails -->
+    <div class="mosaic-thumbs">
+      <div class="mosaic-thumb" id="mt0" onclick="mosaicLB(1)"><img id="mti0" src="" alt=""/></div>
+      <div class="mosaic-thumb" id="mt1" onclick="mosaicLB(2)"><img id="mti1" src="" alt=""/></div>
+      <div class="mosaic-thumb" id="mt2" onclick="mosaicLB(3)"><img id="mti2" src="" alt=""/></div>
+      <div class="mosaic-thumb" id="mt3" onclick="mosaicLB(4)"><img id="mti3" src="" alt=""/></div>
+    </div>
+    <!-- Nav dots -->
+    <div class="mosaic-nav">
+      <button class="mosaic-prev" onclick="mosaicNav(-1)">&#x2039;</button>
+      <div class="mosaic-dots" id="mosaicDots"></div>
+      <button class="mosaic-next" onclick="mosaicNav(1)">&#x203a;</button>
+    </div>
+  </div>
+
+  <!-- Clinic Video -->
+  <div style="padding:0 6vw;margin-top:24px;">
+    <div class="gvid" id="gv" onclick="playGV()">
+      <video id="gvvid" src="VID-20260605-WA0063.mp4" preload="metadata"></video>
+      <div class="gplay"><span>&#9654;</span></div>
+    </div>
   </div>
 </section>
 
@@ -616,7 +632,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.28);}
 <!-- SOCIAL BAR -->
 <div class="soc">
   <div>
-    <p style="color:rgba(255,255,255,.35);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;">Follow Us</p>
+    <p style="color:rgba(255,255,255,.8);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;">Follow Us</p>
     <div class="socl">
       <a href="https://www.linkedin.com/company/ideal-speech-and-hearing-solutions/" target="_blank">in</a>
       <a href="https://www.facebook.com/people/Id%C3%A9al-Speech-and-Hearing-Solutions/61573655292414/" target="_blank">f</a>
@@ -651,7 +667,10 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.28);}
       <button class="mclose" onclick="closeBM()">&#x2715;</button>
     </div>
     <div class="mbody">
-      <img class="mpic" id="bmpic" src="" alt="" loading="lazy"/>
+      <!-- Large brand logo display — no product photo -->
+      <div style="background:#fff;display:flex;align-items:center;justify-content:center;padding:40px 32px;min-height:200px;border-bottom:1px solid rgba(122,28,62,.1);">
+        <img id="bmpic" src="" alt="" loading="lazy" style="max-height:160px;max-width:100%;object-fit:contain;display:block;"/>
+      </div>
       <div class="mtext"><p id="bmdesc"></p></div>
     </div>
     <div class="mfoot">
@@ -749,19 +768,21 @@ function playGV(){const el=document.getElementById('gv'),v=document.getElementBy
 
 // BRAND DATA
 const BD={
-  widex:{title:'Widex',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhg_TlmHOzg_4JLbRWnIUG5bxcPPbMjxeKqXxjC68Yn_vknIBtRn0SxYyDhcO6am5aK0Xb5JxmdvPnv6xhna2qyFUWSoONx7N9ZgsmPWSEWGzt1HuEmzG1MzwwP-pvEx1aTGF4TA049SXKSDDM7j5tYG1tEmwpFFCp_Nxg5UFNZxJTOPjgm4XA7mIjCpWI/s320/Widex.PNG',pic:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLV_c0Ra2k4nMgEHlsZ2qJSYIP2MbLM1tJAhhIxh_o5K5IRPT84y4M7wsRggRlsKwuL69u5yAPEJwt-56fHcf0_CCMRgDDkEUfxETeR8PLAXsTSGDpKaOufd3HEzy_z9QIBKyPoxsgE-HFISFpCfDiq0ixPf5MrnRnNVjUFvXftdXr_mwVUlp2B5eTbpQ/s1024/widex11.jpg',desc:'Widex believes your hearing is best served by natural sound. Their hearing aids are engineered to process sound as close to the natural hearing system as possible — so natural, you might forget you even have hearing loss.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Widex%20hearing%20aids.%20Please%20guide%20me.'},
-  phonak:{title:'Phonak',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRnEWpQad5JGMQyyVrKyJzZ6RDRahp1CQwHRwm_fwXzvmaDoGrKnBCAC1T7DZP8Czvedi62tE2nhaIBSfaVEOMsyLHAdr9rinPpnFToKpID6pME7JpeTDCk04BQX4dPoWZz9e9la3CXCkYNQ-vAdwFd20BVzas1wUSjomCnf4w1oSt9UuHA9w06Q4FGH8/s320/Phonak.PNG',pic:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJcjkQP4b9VIc_Nkdg-tn7lWoDtXk13tPxzdMO5AtAyXXXBOU3_EQZceQdRfHbUTntbPJors3ExdTrdt9FuVOQgXBiW2E3Qv4QV9yT8NLujX06gRWPNHY3kUF8fGW1RFoJnltCreEouR1zfG-QQDjU0WYQpktJCveMOK7YEJyfPrXv1rKaOS3oEdmJ5og/s300/phonak1.jpg',desc:'Phonak is a global leader in hearing solutions. Their innovative technology, including the Roger wireless system and AutoSense OS, delivers exceptional speech understanding even in the most challenging listening environments.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Phonak%20hearing%20aids.%20Please%20guide%20me.'},
-  signia:{title:'Signia',logo:'',pic:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnZTz6rp9fA2et97GnW5A2To-NKvjlpqvlyGxN8xYelMGKsrfgAmVgpjRESG8GIP_pGIHNV7cpO3QGv0yQ76wMgGuQRjkImlFv_wdjayXj-63GVP-_HhBlV5rNcnUK71UMTvvFZ84pb8P10q4iruAtv1ur5YEoxd3KHt4CpNN8YH2KDDcVI-Z52Fm92rU/s1260/IMG-20260605-WA0060.jpg',desc:'Signia combines cutting-edge hearing technology with elegant design. Known for Own Voice Processing (OVP) technology, Signia hearing aids make your own voice sound completely natural while delivering outstanding sound quality.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Signia%20hearing%20aids.%20Please%20guide%20me.'},
-  resound:{title:'GN ReSound',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgg7rZK1Ma-Aw6QgxJtI_TZx8JsApSvltCzCXVLoyebQ2ymziywxzOzPeXzjODDdq4vPpcGAIhQ4Uk12qM2RI4-hZlk3GeOd6H6ZKnZnDBJNn-FUNWGNEv3u6T6ASTlsNOIeEcwzKb0ej-9lo4K7tBVKTOmzZLRa5pHgYLpjmn24jq48wWavVcf1bmpqyA/s320/GN-Resound.PNG',pic:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3ICeAK72oBXLABl6u1PksFwQXtouJVwo7InNu8wAtLKBVKrA2WWi3iR5LBfTzsqtBfNtfZ-aHCdTlQvX36o-xjyh20bsdjqWi1EX3tf74HuC13MbIhCKiOhlCaVHFzjKd-8-nW5_MAL1moA7dup8o3KjcxOdgc68t7c556tzM-6HsHxq8oZKUUZ1whPw/s500/resound.jpg',desc:'GN ReSound pioneers smart hearing solutions with direct Bluetooth streaming to smartphones and TVs. Their AI-driven sound processing and industry-leading rechargeable technology offer unmatched connectivity and listening comfort.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20GN%20ReSound%20hearing%20aids.%20Please%20guide%20me.'},
-  unitron:{title:'Unitron',logo:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr1VEgq770-9toAKxeF4TOM7g_vAezge9R6jtaqgnE1zAZ2GppZSejxLDZrA-AiU9lpgGtOenHLcxHho2xNQ3G5HlShTHDe1XDPdQGUFCFnFdWiWfu9z3NXLtCud004si4UnLmtBUAseuVCo4C96vDoLeNvy5ygt_ByHqVoJAWGAufODmn2jI-8gB9dtk/s320/Unitron.PNG',pic:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5zf2YJH5cR5Hs0kzbs3MlJL9vwIKp0qBni5a03wgKkTyVMh39XuGTYfdwE1D_r202wmZzl5eDA8AcJU6mgCD5z0RZPGhjNgBRqCADnpYgzDqZvzKkJKsyIYJ4siMhXmN7KRV1vLq22VRxaAiL4gEFqHhBLppY5oGT-npvHAs4IHwMI73RqyEUiRQFzhY/s1200/unitron1.jpg',desc:'Unitron hearing aids are built on a philosophy of putting people first. Their Log It All data-logging feature and the Flex:trial programme allow patients to experience hearing aids in real life before making a commitment.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Unitron%20hearing%20aids.%20Please%20guide%20me.'},
-  bestsound:{title:'BestSound IDÉAL',logo:'',pic:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgugj9nB39PBt9qVNmIFlV93JxZBM4IMVu_xtEqnA6co7tFJHxzsyze6Zsls1bsdxT77oTMiMpJnHYx6Hlj-KDl4TX0sFuJSnrwsLSBFUnq_SE4ttRrjpc6PFYUvfcHaujiKZj1zc19MG2NaiXLzajEh2Fx6ZnwJ-rnTOtWzHBbfdiSuIenPb3jbQiEZ5w/s1600/bestsound12.jpg',desc:'BestSound IDÉAL Speech and Hearing Solutions is our second clinic located at Urwa, Mangalore. Offering the same expert audiological care, premium hearing aid brands and personalised service — now more conveniently located for patients in Urwa and surrounding areas. Call: 094828 88403.',wa:'Hello%20BestSound%20IDÉAL!%20I%27d%20like%20more%20information.'},
-  cochlear:{title:'Cochlear\u2122',logo:'',pic:'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1X9insP19qnCWuARFN18RLxxpM7EyMrvRYDfc54Vcg9APm41ue5vBLkz2vxcpJL_PlZ0PfyqroVQb735YAew-kmwn9j69Mh74pssmNW2yVHIb1jDHuKIHcLQU8XkuLhpeP47buzMCwP1-qqyx8xzj7Oikrylml5tCou7r1AudNqkszMTRCOZVNAMgBcI/s667/IMG-20260529-WA0050.jpg',desc:"Cochlear\u2122 is the global leader in implantable hearing devices. IDÉAL Speech and Hearing Solutions is Mangalore's exclusive provider of Cochlear\u2122 Implant Mapping — the only clinic in the district offering this critical service for CI recipients. Whether newly implanted or requiring routine follow-up, our expert team is here for you.",wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Cochlear%20Implant%20Mapping.%20Please%20guide%20me.'}
+  widex:{title:'Widex',logo:'widex11.jpg',pic:'widex11.jpg',desc:'Widex believes your hearing is best served by natural sound. Their hearing aids are engineered to process sound as close to the natural hearing system as possible — so natural, you might forget you even have hearing loss.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Widex%20hearing%20aids.%20Please%20guide%20me.'},
+  phonak:{title:'Phonak',logo:'phonak1.jpg',pic:'phonak1.jpg',desc:'Phonak is a global leader in hearing solutions. Their innovative technology, including the Roger wireless system and AutoSense OS, delivers exceptional speech understanding even in the most challenging listening environments.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Phonak%20hearing%20aids.%20Please%20guide%20me.'},
+  signia:{title:'Signia',logo:'',pic:'signia.jpg',desc:'Signia combines cutting-edge hearing technology with elegant design. Known for Own Voice Processing (OVP) technology, Signia hearing aids make your own voice sound completely natural while delivering outstanding sound quality.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Signia%20hearing%20aids.%20Please%20guide%20me.'},
+  resound:{title:'GN ReSound',logo:'resound.jpg',pic:'resound.jpg',desc:'GN ReSound pioneers smart hearing solutions with direct Bluetooth streaming to smartphones and TVs. Their AI-driven sound processing and industry-leading rechargeable technology offer unmatched connectivity and listening comfort.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20GN%20ReSound%20hearing%20aids.%20Please%20guide%20me.'},
+  unitron:{title:'Unitron',logo:'unitron1.jpg',pic:'unitron1.jpg',desc:'Unitron hearing aids are built on a philosophy of putting people first. Their Log It All data-logging feature and the Flex:trial programme allow patients to experience hearing aids in real life before making a commitment.',wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Unitron%20hearing%20aids.%20Please%20guide%20me.'},
+  bestsound:{title:'BestSound IDÉAL',logo:'',pic:'bestsound12.jpg',desc:'BestSound IDÉAL Speech and Hearing Solutions is our second clinic located at Urwa, Mangalore. Offering the same expert audiological care, premium hearing aid brands and personalised service — now more conveniently located for patients in Urwa and surrounding areas. Call: 094828 88403.',wa:'Hello%20BestSound%20IDÉAL!%20I%27d%20like%20more%20information.'},
+  cochlear:{title:'Cochlear\u2122',logo:'',pic:'cochlear.jpg',desc:"Cochlear\u2122 is the global leader in implantable hearing devices. IDÉAL Speech and Hearing Solutions is Mangalore's exclusive provider of Cochlear\u2122 Implant Mapping — the only clinic in the district offering this critical service for CI recipients. Whether newly implanted or requiring routine follow-up, our expert team is here for you.",wa:'Hello%20IDÉAL!%20I%27m%20interested%20in%20Cochlear%20Implant%20Mapping.%20Please%20guide%20me.'}
 };
 function openBM(k){
   const b=BD[k];
+  const darkBg=['signia','bestsound','cochlear'];
   document.getElementById('bmlogo').src=b.logo;
   document.getElementById('bmtitle').textContent=b.title;
   document.getElementById('bmpic').src=b.pic;
+  document.getElementById('bmpic').parentElement.style.background=darkBg.includes(k)?'#111':'#fff';
   document.getElementById('bmdesc').textContent=b.desc;
   document.getElementById('bmwa').href='https://wa.me/919482110420?text='+b.wa;
   document.getElementById('bmo').classList.add('on');
