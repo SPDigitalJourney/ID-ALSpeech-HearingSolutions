@@ -182,3 +182,33 @@ p{font-size:1rem;color:var(--grey-700)}
 @media(max-width:1024px){.grid-4{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}.stat-strip{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:768px){.section{padding:3.5rem 0}.grid-2,.grid-3{grid-template-columns:1fr}.grid-4{grid-template-columns:repeat(2,1fr)}.nav-links,.nav-cta .btn-outline{display:none}.hamburger{display:flex}.footer-grid{grid-template-columns:1fr;gap:2rem}.stat-strip{grid-template-columns:1fr 1fr;padding:1.5rem;gap:1.25rem}.form-row{grid-template-columns:1fr}.wa-bubble span{display:none}.wa-bubble{padding:.85rem;border-radius:50%}}
 @media(max-width:480px){.grid-4{grid-template-columns:1fr}.stat-strip{grid-template-columns:1fr 1fr}h1{font-size:1.9rem}h2{font-size:1.6rem}}
+
+/* ===== Hero responsive grids ===== */
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+/* ===== Navbar logo: bigger ===== */
+.navbar-logo img{height:48px}
+
+/* ===== Mobile refinements ===== */
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:.85rem}
+  .hero-stats > div{padding:1.15rem !important}
+  .navbar-logo img{height:38px}
+  .logo-name{font-size:1.05rem}
+  .logo-sub{font-size:.6rem}
+  h1{font-size:2rem !important}
+  .page-hero{padding-top:calc(72px + 2.5rem);padding-bottom:2.5rem}
+  .section{padding:3rem 0}
+  .btn{padding:.8rem 1.5rem;font-size:.9rem}
+  .modal-box{padding:1.75rem}
+  iframe{max-width:100%}
+}
+@media(max-width:480px){
+  .marquee-inner span{font-size:.75rem}
+  .footer-grid{gap:1.5rem}
+  .footer{padding-top:2.5rem}
+  .stat-strip{padding:1.25rem;gap:1rem}
+  .stat-num{font-size:1.8rem}
+}
