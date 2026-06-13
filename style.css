@@ -227,13 +227,13 @@ p{font-size:1rem;color:var(--grey-700)}
 
 /* ===== Footer Logo — soft blended card ===== */
 .footer-logo{
-  height:84px;width:auto;
+  height:72px;width:auto;
   background:#fff;border-radius:12px;
-  padding:.6rem 1rem;
+  padding:.65rem .9rem;
   box-shadow:0 4px 16px rgba(0,0,0,.2);
   margin-bottom:1rem;display:block;
 }
-@media(max-width:480px){.footer-logo{height:64px}}
+@media(max-width:480px){.footer-logo{height:60px}}
 
 /* ===== Gallery Video Grid - mobile stack ===== */
 @media(max-width:768px){
