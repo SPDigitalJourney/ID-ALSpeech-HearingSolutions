@@ -212,15 +212,30 @@ p{font-size:1rem;color:var(--grey-700)}
 }
 
 /* ===== Authorised Dealer Logos ===== */
-.dealer-logo{
-  height:88px;width:auto;max-width:200px;object-fit:contain;
-  background:#fff;border-radius:14px;padding:1rem 1.5rem;
-  box-shadow:var(--shadow-md);transition:var(--transition);
+.dealer-grid{
+  display:flex;flex-wrap:wrap;gap:1.25rem;
 }
-.dealer-logo:hover{transform:translateY(-4px) scale(1.06);box-shadow:var(--shadow-lg)}
-@media(max-width:768px){
-  .dealer-logos{gap:1.25rem !important}
-  .dealer-logo{height:60px;padding:.65rem .9rem}
+.dealer-card{flex:1 1 calc(33.333% - 1.25rem);min-width:260px}
+.dealer-card{
+  display:flex;align-items:center;gap:1rem;
+  background:var(--grey-100);border-radius:12px;
+  padding:1.25rem 1.5rem;transition:var(--transition);
+}
+.dealer-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.dealer-card img{height:42px;width:auto;max-width:130px;object-fit:contain;flex-shrink:0}
+.dealer-divider{width:2px;height:38px;background:var(--grey-300);flex-shrink:0;border-radius:2px}
+.dealer-label{
+  font-family:var(--font-display);font-size:.95rem;font-weight:600;
+  color:var(--grey-500);letter-spacing:.06em;line-height:1.3;
+  text-transform:none;
+}
+.dealer-label br{display:block}
+@media(max-width:1024px){
+  .dealer-card{flex:1 1 calc(50% - 1.25rem)}
+}
+@media(max-width:600px){
+  .dealer-card{flex:1 1 100%;min-width:0}
+  .dealer-card img{height:38px}
 }
 
 /* ===== Footer Logo — soft blended card ===== */
