@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://spdigitaljourney.github.io/sitemap.xml
+
+# Disallow nothing — all pages are public
